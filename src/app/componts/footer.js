@@ -1,0 +1,126 @@
+"use client";
+import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
+import Image from "next/image";
+
+export default function Footer() {
+  return (
+    <footer className="bg-black text-gray-300 py-10 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Logo & Description */}
+        <div>
+          <Image
+            src="https://derm-active.com/wp-content/uploads/2023/01/Untitled-2-01.png-W3-300x71.png"
+            width={160}
+            height={80}
+            alt="Dermactive Logo"
+            className="mb-4"
+          />
+          <p className="text-sm leading-6">
+            Dermactive Is A Dermo-Cosmetics Brand That Understands Quality,
+            Effectiveness, And Safety. Offers An Integrated Skin Care Solutions.
+          </p>
+        </div>
+
+        {/* Dermactive Links */}
+        <div>
+          <h3 className="text-white text-lg font-semibold mb-4">DERMACTIVE</h3>
+          <ul className="space-y-3 text-sm">
+            <li>
+              <a href="#" className="hover:text-white">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                Contact us
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                Our Blogs
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Our Range */}
+        <div>
+          <h3 className="text-white text-lg font-semibold mb-4">Our Range</h3>
+          <ul className="space-y-3 text-sm">
+            <li>
+              <a href="#" className="hover:text-white">
+                ACTI-CLEAR
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                ACTI-WHITE
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                ACTI-SOLAIRE
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                ACTI-REPAIR
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                TRICHO-ACT
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Skin Concerns */}
+        <div>
+          <h3 className="text-white text-lg font-semibold mb-4">
+            Skin Concerns
+          </h3>
+          <ul className="space-y-3 text-sm">
+            <li>
+              <a href="#" className="hover:text-white">
+                Oily & Acne - prone skin
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                Un-Even & Pigmented Skin
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                Sun Exposure
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                Irritated & Damaged Skin
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white">
+                Hair Loss
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="border-t border-gray-700 mt-10 pt-6 text-center">
+        <div className="flex justify-center space-x-6 mb-4 text-xl text-white">
+          <FaFacebook />
+          <FaInstagram />
+          <FaYoutube />
+          <FaTiktok />
+        </div>
+        <p className="text-sm">Developed By Ergasti Digital</p>
+        <p className="text-sm">DermActive © 2023. All Rights Reserved</p>
+      </div>
+    </footer>
+  );
+}
