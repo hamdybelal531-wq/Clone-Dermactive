@@ -68,7 +68,7 @@ export default function Navibar() {
               "Product Type",
               "About Dermactive",
             ].map((text, i) => (
-              <li key={i} className="flex cursor-pointer">
+              <li key={i} className="flex cursor-pointer text-black">
                 {text}{" "}
                 <span className="mt-1">
                   <HiChevronDown />
