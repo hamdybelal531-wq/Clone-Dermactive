@@ -118,7 +118,7 @@ export default function Footer() {
           <FaYoutube />
           <FaTiktok />
         </div>
-        <p className="text-sm">Developed By Ergasti Digital</p>
+        <p className="text-sm">Developed By Belal Hamdy ^_^</p>
         <p className="text-sm">DermActive © 2023. All Rights Reserved</p>
       </div>
     </footer>
