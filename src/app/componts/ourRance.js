@@ -2,10 +2,13 @@
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
+// ملاحظة: لإضافة Text Shadow في Tailwind، قد تحتاج إلى إضافة مكون إضافي
+// أو تعريف الكلاس في Global CSS. سنستخدم هنا كلاسات Tailwind فقط.
+
 export default function OurRance() {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 1400 },
       items: 4,
     },
@@ -19,7 +22,7 @@ export default function OurRance() {
     },
     mobile: {
       breakpoint: { max: 640, min: 0 },
-      items: 1,
+      items: 2,
     },
   };
   const Boxs = [
@@ -39,59 +42,47 @@ export default function OurRance() {
       Name: "ACTI-WHITE",
       url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
     },
-    {
-      Name: "SWEAT CONTROL",
-      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Sweat-Control.jpg",
-    },
-    {
-      Name: "SWEAT CONTROL",
-      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Sweat-Control.jpg",
-    },
-    {
-      Name: "SWEAT CONTROL",
-      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Sweat-Control.jpg",
-    },
-    {
-      Name: "SWEAT CONTROL",
-      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Sweat-Control.jpg",
-    },
+    // ... باقي العناصر
   ];
+
   return (
     <>
-      <h1 className="text-center text-4xl text-[#777] mt-10">
+      <h1 className="text-center text-3xl  lg:text-4xl text-gray-800 mt-16 mb-12">
         DISCOVER OUR RANGE
       </h1>
       <Carousel
-        infinite={true} // يخلي السلايدر يدور بشكل مستمر
-        autoPlay={true} // يشتغل تلقائيًا
-        autoPlaySpeed={3000} // سرعة التغيير بالألف جزء من الثانية (هنا كل 3 ثواني)
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={3000}
         keyBoardControl={true}
-        customTransition="all 1s"
+        customTransition="all 0.5s"
         transitionDuration={500}
-        containerClass="carousel-container"
-        showDots
+        // containerClass="carousel-container"
+        // showDots
         slidesToSlide={1}
         responsive={responsive}
-        className="sm:mt-10 pb-10 text-center" // ← خلي margin-bottom كبير عشان تنزل الدوتس لتحت
-        dotListClass="flex justify-center gap-2" // ترتيب الدوتس في النص
-        itemClass="px-3"
+        className="sm:mt-10 pb-16 text-center"
+        itemClass=""
       >
         {Boxs.map((obj, i) => (
           <div
             key={i}
-            className="relative sm-[245px] lg:w-[340px] xl:w-[95%] h-full bg-white border-2 sm:m-2  overflow-hidden rounded-xl cursor-pointer"
+            className="relative w-full h-35 sm:h-60 md:h-60 group  cursor-pointer"
           >
             <Image
+              sizes="100vw"
               src={obj.url}
               alt={obj.Name}
-              width={500}
-              height={500}
+              fill
               priority
-              className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 p-[5px]"
             />
-            <h1 className="absolute bottom-5 right-5 text-2xl text-[#777] bg-white/80 px-3 py-1 rounded-3xl shadow">
-              {obj.Name}
-            </h1>
+
+            <div className="absolute inset-0 -bottom-[38px] sm:-bottom-[37px] md:-bottom-[42px] flex items-end justify-end p-6">
+              <h1 className="text-[#777] text-[14px]  sm:text-[18px] text-left whitespace-nowrap transition duration-300 border-b-2 border-gray-400">
+                {obj.Name}
+              </h1>
+            </div>
           </div>
         ))}
       </Carousel>

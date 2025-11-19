@@ -13,6 +13,7 @@ export default function Readmore() {
         </div>
         <div className="w-full h-100 relative">
           <Image
+            sizes="100vw"
             src={
               "https://derm-active.com/wp-content/uploads/2023/06/1920x470-ENG.jpg"
             }

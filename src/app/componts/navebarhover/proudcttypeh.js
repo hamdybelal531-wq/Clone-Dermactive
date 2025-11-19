@@ -1,0 +1,134 @@
+import Image from "next/image";
+import { useState } from "react";
+
+// بيانات المجموعات (Ranges Data)
+//
+const rangesData = [
+  {
+    name: "Cleansers",
+    products: [" ACTI-CLEAR Gentle Cleansing Gel", "ACTI-WHITE Foaming Gel"],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-9.jpg",
+  },
+  {
+    name: "Face Care",
+    products: [
+      "ACTI-CLEAR Hydra-Mattifying Gel",
+      "ACTI-WHITE Depigmenting Cream",
+      "ACTI-WHITE Eye Contour",
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-3.jpg",
+  },
+  {
+    name: "Sun Protection",
+    products: [
+      "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
+      "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
+      "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
+      "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
+      "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
+      "ACTI-SOLAIRE SPF50+ KIDS",
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/05/864x600-Acti-Solaire.jpg",
+  },
+  {
+    name: "Serums",
+    products: [
+      " ACTI-CLEAR Correcting Serum",
+      "ACTI-WHITE Brightening Correcting Serum",
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-4.jpg",
+  },
+  {
+    name: "Eye Care",
+    products: [" ACTI-WHITE Eye Contour"],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/02/864x600-7.jpg",
+  },
+  {
+    name: "Shampoo & Masks",
+    products: [
+      "TRICHO-ACT Anti-Hair loss Shampoo",
+      "TRICHO-ACT Anti-Dandruff Shampoo DS",
+      "TRICHO-ACT Hair Repairing Mask",
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-5.jpg",
+  },
+];
+
+export default function HoverProduct({ Show, SetShow }) {
+  const [namePrudct, setNamePrudect] = useState(rangesData[0].name);
+
+  const renderRangeItems = () => {
+    return rangesData.map((range) => (
+      <li
+        key={range.name}
+        className="hover:text-[#777] cursor-pointer relative text-[20px] whitespace-nowrap"
+      >
+        <span
+          style={{
+            color: namePrudct === range.name ? "#777" : "",
+          }}
+          onMouseEnter={() => setNamePrudect(range.name)}
+          className="hover:text-[#777]"
+        >
+          {range.name}
+        </span>
+        {/* القائمة الفرعية والصورة */}
+        <ul
+          className="p-10 flex-col gap-5 absolute top-full min-w-[700px] text-[#777]"
+          style={{
+            display: namePrudct === range.name ? "flex" : "none",
+            left:
+              range.name === "Face Care"
+                ? "-120px"
+                : range.name === "Sun Protection"
+                ? "-230px"
+                : range.name === "Serums"
+                ? "-360px"
+                : range.name === "Eye Care"
+                ? "-450px"
+                : range.name === "Shampoo & Masks"
+                ? "-550px"
+                : "0px",
+          }}
+        >
+          {range.products.map((product) => (
+            <li key={product}>{product}</li>
+          ))}
+          {/*  الصورة */}
+          <div className="p-20 absolute lg:w-[400px] xl:w-[700px] h-[450px] top-0 lg:-right-[250px] xl:-right-[600px]">
+            <Image
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              src={range.imageSrc}
+              fill
+              alt={`${range.name} products photo`}
+              className="object-cover p-5"
+            />
+          </div>
+        </ul>
+      </li>
+    ));
+  };
+
+  return (
+    <>
+      {Show.ShowProduct && (
+        <div
+          onMouseLeave={() => SetShow({ ...Show, ShowProduct: false })}
+          className="absolute top-18 left-0 w-full h-140 bg-white pb-10 flex"
+        >
+          <div>
+            <ul className="p-10 flex flex-col gap-5">
+              <div className="flex gap-5 ">{renderRangeItems()}</div>
+            </ul>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

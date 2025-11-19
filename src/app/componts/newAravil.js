@@ -9,89 +9,81 @@ export default function NewAravil() {
     {
       url: "https://derm-active.com/wp-content/uploads/2023/06/Tricho-ACT-Anti-Hair-loss-Shampoo.jpg",
       url2: "https://derm-active.com/wp-content/uploads/2023/06/1000x1440-3-711x1024.jpg",
-      search: "",
       name: "tricho act".toUpperCase(),
       description: "anti hair loss shampoo ".toUpperCase(),
       id: 1,
     },
     {
       url: "https://derm-active.com/wp-content/uploads/2024/08/TRIPPLE-EFFECT-711x1024.png",
-      search: "",
       name: "Triple Efect".toUpperCase(),
       description: "Sweet control".toUpperCase(),
       id: 2,
     },
     {
       url: "https://derm-active.com/wp-content/uploads/2024/08/REFRESHING-711x1024.png",
-      search: "",
       name: "refreshing".toUpperCase(),
       description: "sweet control".toUpperCase(),
       id: 3,
     },
     {
       url: "https://derm-active.com/wp-content/uploads/2024/08/INTENSE-711x1024.png",
-      search: "",
       name: "Intence".toUpperCase(),
       description: "sweet control".toUpperCase(),
       id: 4,
     },
   ];
+
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 1400 },
-      items: 4,
-    },
-    desktop: {
-      breakpoint: { max: 1400, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 640 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 640, min: 0 },
-      items: 1,
-    },
+    superLargeDesktop: { breakpoint: { max: 4000, min: 1400 }, items: 4 },
+    desktop: { breakpoint: { max: 1400, min: 1024 }, items: 3 },
+    tablet: { breakpoint: { max: 1024, min: 640 }, items: 2 },
+    mobile: { breakpoint: { max: 640, min: 0 }, items: 2 },
   };
+
   return (
     <>
-      <div className="w-[75%] mx-auto  sm:p-3 text-center">
-        <h1 className="text-[#777] text-3xl text-center mt-10">New Arrivel</h1>
-        <Carousel responsive={responsive} className="">
+      <div className="w-full lg:w-[75%] mx-auto sm:p-3 text-center py-12">
+        <h1 className="text-gray-800 text-5xl  text-center mb-12">
+          New Arrival
+        </h1>
+        <Carousel responsive={responsive} className="py-8">
           {boxes.map((box) => {
             return (
               <div
                 key={box.id}
-                className="w-full h-full  m-5 flex flex-col overflow-hidden cursor-pointer relative box"
+                className="group  overflow-hidden transition-all duration-300  m-4 flex flex-col cursor-pointer relative"
               >
-                <div className="relative w-full h-100">
+                <div className="relative w-full h-80 overflow-hidden">
                   <Image
                     src={box.url}
                     fill
-                    // fill
-                    alt="sweet control"
-                    className="p-5"
-                  ></Image>
+                    alt={box.name}
+                    className="object-contain  transition-all duration-500 "
+                  />
                 </div>
+
                 {box.url2 ? (
-                  <div className="w-full absolute h-8/12">
+                  <div className="absolute -top-2 left-0 w-full h-full">
                     <Image
-                      src="https://derm-active.com/wp-content/uploads/2023/06/1000x1440-3-711x1024.jpg"
-                      alt="image"
+                      sizes="100vw"
+                      src={box.url2}
+                      alt="Second View"
                       fill
-                      className=" ml-3  top-0 left-0 opacity-0 photohover transition-all"
+                      className="p-5 object-contain opacity-0 transition-all duration-500 group-hover:opacity-100"
                     />
                   </div>
                 ) : null}
-                <h1 className="text-[#777] text-center pb-3 -mt-5 hover:text-[#222]">
-                  {box.name}
-                </h1>
-                <p className="text-center text-[#222] hover:text-[#777] pb-3 mt-2 ">
-                  {box.description}
-                </p>
-                <HiOutlineSearch className=" text-5xl search transition-all  bg-[#eee] absolute px-3 py-2 opacity-0  text-gray-500 bottom-25 left-30" />
+
+                <HiOutlineSearch className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-white/80 p-3 text-gray-700 opacity-0 transition-all duration-300 group-hover:opacity-100 hover:bg-white" />
+
+                <div className="px-4  flex flex-col items-center">
+                  <h1 className="text-[14px]  text-gray-800 pt-2 pb-1 transition-colors duration-300 group-hover:text-blue-600">
+                    {box.name}
+                  </h1>
+                  <p className="text-[10px] lg:text-[14px] text-gray-500 pb-2">
+                    {box.description}
+                  </p>
+                </div>
               </div>
             );
           })}

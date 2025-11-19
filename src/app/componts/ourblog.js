@@ -5,7 +5,6 @@ import Image from "next/image";
 export default function OurBlog() {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 1400 },
       items: 3,
     },
@@ -40,24 +39,32 @@ export default function OurBlog() {
       id: 3,
     },
   ];
+
   return (
     <>
-      <div className="w-[75%] mx-auto  sm:p-3 text-center">
-        <h1 className="text-center text-5xl text-[#777]">Our Blog</h1>
-        <Carousel itemClass="p-2" showDots responsive={responsive}>
+      <div className="lg:w-[80%] w-full mx-auto py-12 text-center pb-10">
+        <h1 className="text-center mb-12 text-5xl text-gray-800 ">Our Blog</h1>
+
+        <Carousel itemClass="p-3" responsive={responsive}>
           {boxes.map((box) => {
             return (
-              <div className="w-full h-full m-5" key={box.id}>
-                <div className="w-full h-[200px] relative">
+              <div
+                className="w-full h-full  overflow-hidden 
+                    transform transition duration-300 hover:scale-[1.02] cursor-pointer"
+                key={box.id}
+              >
+                <div className="w-full h-[250px] relative">
                   <Image
                     src={box.url}
                     fill
-                    alt="Unkhown"
+                    alt="Blog Post Image"
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   ></Image>
                 </div>
-                <div className="">
-                  <p className="text-1xl max-w-[90%] text-left text-[#666] mt-3">
+
+                <div className="p-4">
+                  <p className="text-[14px] text-[#777] text-left mt-3 leading-snug">
                     {box.prag}
                   </p>
                 </div>
