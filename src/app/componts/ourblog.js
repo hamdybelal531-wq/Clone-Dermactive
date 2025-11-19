@@ -47,6 +47,9 @@ export default function OurBlog() {
 
         <Carousel
           // autoPlay={true}
+          swipeable={true}
+         draggable={true}
+          minimumTouchDrag={5} 
           slidesToSlide={1}
           transitionDuration={150}
           itemClass="p-3"
