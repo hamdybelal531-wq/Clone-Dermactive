@@ -164,11 +164,12 @@
   }
 }
 
+
 .react-multi-carousel-arrow {
-  z-index: 50 !important;
+    z-index: 10 !important; /* خفضه من 50 */
 }
 
 .react-multi-carousel-list .react-multiple-carousel__arrow {
-    /* قيمة أقل من z-index القائمة المنسدلة (9999) */
-    z-index: 200 !important; 
+    z-index: 1 !important; 
 }
+
