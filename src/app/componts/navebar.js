@@ -142,12 +142,12 @@ export default function Navibar() {
         <HoverSkincon Show={Show} SetShow={SetShow} />
         <HoverProduct Show={Show} SetShow={SetShow} />
         {/* Hover For Ul */}
+      </motion.nav>
         {/* ⬅️ مكون القائمة الجانبية (Mobile Menu) */}
         <MobileMenu
           ShowMobileMenu={ShowMobileMenu}
           SetShowMobileMenu={SetShowMobileMenu}
         />
-      </motion.nav>
 
       {/* Carousel */}
       <div className="w-full lg:h-screen relative mt-15">
