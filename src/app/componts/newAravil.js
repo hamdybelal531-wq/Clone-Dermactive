@@ -46,7 +46,12 @@ export default function NewAravil() {
         <h1 className="text-gray-800 text-5xl  text-center mb-12">
           New Arrival
         </h1>
-        <Carousel responsive={responsive} className="py-8">
+        <Carousel
+          transitionDuration={150}
+          customTransition="transform 0.15s ease-out"
+          responsive={responsive}
+          className="py-8"
+        >
           {boxes.map((box) => {
             return (
               <div

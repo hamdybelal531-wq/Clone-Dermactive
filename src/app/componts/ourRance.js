@@ -55,8 +55,8 @@ export default function OurRance() {
         autoPlay={true}
         autoPlaySpeed={3000}
         keyBoardControl={true}
-        customTransition="all 0.5s"
-        transitionDuration={500}
+        customTransition="transform 0.15s ease-out"
+        transitionDuration={150}
         // containerClass="carousel-container"
         // showDots
         slidesToSlide={1}

@@ -45,7 +45,11 @@ export default function OurBlog() {
       <div className="lg:w-[80%] w-full mx-auto py-12 text-center pb-10">
         <h1 className="text-center mb-12 text-5xl text-gray-800 ">Our Blog</h1>
 
-        <Carousel itemClass="p-3" responsive={responsive}>
+        <Carousel
+          itemClass="p-3"
+          responsive={responsive}
+          customTransition="transform 0.15s ease-out"
+        >
           {boxes.map((box) => {
             return (
               <div
