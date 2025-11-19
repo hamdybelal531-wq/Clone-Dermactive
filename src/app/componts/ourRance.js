@@ -52,8 +52,8 @@ export default function OurRance() {
       </h1>
       <Carousel
         infinite={true}
-        autoPlay={true}
-        autoPlaySpeed={3000}
+        // autoPlay={true}
+        // autoPlaySpeed={3000}
         keyBoardControl={true}
         customTransition="transform 0.15s ease-out"
         transitionDuration={150}

@@ -58,6 +58,16 @@ export default function Navibar() {
     return () => carouselApi.off("select", onSelect);
   }, [carouselApi]);
 
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    const interval = setInterval(() => {
+      carouselApi.scrollNext();
+    }, 4000); // 4 ثواني
+
+    return () => clearInterval(interval);
+  }, [carouselApi]);
+
   return (
     <>
       <motion.nav
