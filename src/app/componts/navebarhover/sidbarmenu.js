@@ -185,7 +185,7 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.3 }}
-          className="absolute top-0 left-2 w-full max-w-xs bg-white shadow-xl z-[99] lg:hidden" // يظهر على الأجهزة الصغيرة فقط
+          className="absolute top-0 left-2 w-full max-w-xs bg-white shadow-xl z-[2000] lg:hidden" // يظهر على الأجهزة الصغيرة فقط
         >
           {/* Header & Close Button */}
           <div className="p-4 flex justify-between items-center border-b border-gray-200 sticky top-0 bg-white">
