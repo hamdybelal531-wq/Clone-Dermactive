@@ -167,3 +167,37 @@
 .react-multi-carousel-arrow {
   z-index: 50 !important;
 }
+
+
+شكراً لتوضيح الصورة. الآن أرى المشكلة بوضوح: سهم الكاروسيل (الذي يأتي من مكون OurRance الموجود أسفل القائمة المنسدلة) يظهر فوق القائمة المنسدلة نفسها.
+
+هذه المشكلة تحدث لأن العنصر الذي يحتوي على السهم في كاروسيل react-multi-carousel قد يكون له سياق تكديس (Stacking Context) مختلف أو قيمة z-index عالية بشكل افتراضي في CSS الخاص بالمكتبة.
+
+لتصحيح هذا التداخل بشكل قاطع، اتبع الخطوتين التاليتين:
+
+🛠️ التعديل الأول: رفع Z-index للقائمة المنسدلة مجدداً (للتأكد)
+تأكد من تطبيق أعلى قيمة ممكنة في HoverOurRange.js.
+
+في ملف HoverOurRange.js:
+
+JavaScript
+// ... في كود HoverOurRange.js
+<div onMouseLeave={() => SetShow({ ...Show, ShowOurRange: false })}
+  // ⬅️ استخدم z-[9999] لضمان الأولوية القصوى على أي مكتبة خارجية
+  className="absolute top-18 left-0 w-full h-120 bg-white pb-10 flex z-[9999]"
+>
+  {/* ... */}
+</div>
+🛠️ التعديل الثاني (الأهم): استهداف أسهم الكاروسيل في Global CSS
+بما أن الأسهم تأتي من مكتبة خارجية (react-multi-carousel)، لا يمكننا تغيير الـ z-index الخاص بها مباشرةً عبر كلاسات Tailwind في مكون OurRance.js. يجب استهدافها في ملف الـ CSS العام لديك (عادةً ما يكون globals.css أو styles.css).
+
+أضف هذا الكود إلى ملف CSS العام لديك:
+
+CSS
+/* استهداف أسهم react-multi-carousel في مكون OurRance وتخفيض Z-index */
+/* هذا سيجعلها تظهر تحت القائمة المنسدلة ذات z-index: 9999 */
+
+.react-multi-carousel-list .react-multiple-carousel__arrow {
+    /* قيمة أقل من z-index القائمة المنسدلة (9999) */
+    z-index: 100 !important; 
+}
