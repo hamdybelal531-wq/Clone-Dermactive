@@ -75,7 +75,7 @@ export default function OurRance() {
               alt={obj.Name}
               fill
               priority
-              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 p-[5px]"
+              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 p-[8px]"
             />
 
             <div className="absolute inset-0 -bottom-[38px] sm:-bottom-[37px] md:-bottom-[42px] flex items-end justify-end p-6">
