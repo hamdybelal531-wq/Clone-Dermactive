@@ -163,3 +163,7 @@
     transition: transform 0.25s ease-out !important;
   }
 }
+
+.react-multi-carousel-arrow {
+  z-index: 50 !important;
+}

@@ -46,7 +46,9 @@ export default function OurBlog() {
         <h1 className="text-center mb-12 text-5xl text-gray-800 ">Our Blog</h1>
 
         <Carousel
-         transitionDuration={150}
+          autoPlay={true}
+          slidesToSlide={1}
+          transitionDuration={150}
           itemClass="p-3"
           responsive={responsive}
           customTransition="transform 0.15s ease-out"

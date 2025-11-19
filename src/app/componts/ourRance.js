@@ -42,6 +42,22 @@ export default function OurRance() {
       Name: "ACTI-WHITE",
       url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
     },
+    {
+      Name: "TRICHO ACT",
+      url: "https://derm-active.com/wp-content/uploads/2023/06/864x600-Tricho-Act.jpg",
+    },
+    {
+      Name: "SWEAT CONTROL",
+      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Sweat-Control.jpg",
+    },
+    {
+      Name: "DERMA ACTIVE BABY",
+      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Baby.jpg",
+    },
+    {
+      Name: "ACTI-WHITE",
+      url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
+    },
     // ... باقي العناصر
   ];
 
@@ -51,17 +67,17 @@ export default function OurRance() {
         DISCOVER OUR RANGE
       </h1>
       <Carousel
-        infinite={true}
-        // autoPlay={true}
+        arrows={true}
+        autoPlay={true}
         // autoPlaySpeed={3000}
-        keyBoardControl={true}
-        customTransition="transform 0.15s ease-out"
+        // keyBoardControl={true}
+        customTransition="transform 0.15s ease-in-out"
         transitionDuration={150}
         // containerClass="carousel-container"
         // showDots
         slidesToSlide={1}
         responsive={responsive}
-        className="sm:mt-10 pb-16 text-center"
+        className="sm:mt-10 pb-16 text-center "
         itemClass=""
       >
         {Boxs.map((obj, i) => (

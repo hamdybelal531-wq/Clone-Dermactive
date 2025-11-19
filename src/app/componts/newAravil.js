@@ -47,6 +47,8 @@ export default function NewAravil() {
           New Arrival
         </h1>
         <Carousel
+          autoPlay={true}
+          slidesToSlide={1}
           transitionDuration={150}
           customTransition="transform 0.15s ease-out"
           responsive={responsive}
