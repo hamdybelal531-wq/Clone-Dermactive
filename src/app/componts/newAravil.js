@@ -48,6 +48,9 @@ export default function NewAravil() {
         </h1>
         <Carousel
           // autoPlay={true}
+          swipeable={true}
+         draggable={true}
+          minimumTouchDrag={5} 
           slidesToSlide={1}
           transitionDuration={150}
           customTransition="transform 0.15s ease-out"
