@@ -68,6 +68,8 @@ export default function OurRance() {
       </h1>
       <Carousel
         arrows={true}
+         draggable={true}
+          minimumTouchDrag={5} 
         // autoPlay={true}
         // autoPlaySpeed={3000}
         // keyBoardControl={true}
