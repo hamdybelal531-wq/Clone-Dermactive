@@ -119,7 +119,7 @@ export default function HoverOurRange({ Show, SetShow }) {
       {Show.ShowOurRange && (
         <div
           onMouseLeave={() => SetShow({ ...Show, ShowOurRange: false })}
-          className="absolute top-18 left-0 w-full h-120 bg-white pb-10 flex z-[1000]"
+          className="absolute top-18 left-0 w-full h-120 bg-white pb-10 flex z-[9999]"
         >
           <div className="pb-10">
             <ul className="p-10 flex flex-col gap-5">
