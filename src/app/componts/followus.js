@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function NewsletterSection() {
   return (
-    <section className="w-full py-20 px-6">
+    <section className="w-full py-5 px-6">
       {/* Title */}
-      <h2 className="text-center text-xl lg:text-3xl tracking-wide text-gray-600 mb-16">
+      <h2 className="text-center text-xl lg:text-3xl tracking-wide text-gray-600 mb-5">
         FOLLOW US ON INSTAGRAM
       </h2>
 

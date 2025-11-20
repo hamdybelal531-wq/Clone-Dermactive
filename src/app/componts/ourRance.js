@@ -7,22 +7,27 @@ import "react-multi-carousel/lib/styles.css";
 // أو تعريف الكلاس في Global CSS. سنستخدم هنا كلاسات Tailwind فقط.
 
 export default function OurRance() {
+  const SMOOTH_EASING = "cubic-bezier(0.25, 0.1, 0.25, 1)";
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1400 },
       items: 4,
+      slidesToSlide: 4,
     },
     desktop: {
       breakpoint: { max: 1400, min: 1024 },
-      items: 3,
+      items: 4,
+      slidesToSlide: 4,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 640 },
-      items: 2,
+      breakpoint: { max: 1024, min: 768 },
+      items: 3,
+      slidesToSlide: 3,
     },
     mobile: {
-      breakpoint: { max: 640, min: 0 },
+      breakpoint: { max: 768, min: 0 },
       items: 2,
+      slidesToSlide: 2,
     },
   };
   const Boxs = [
@@ -63,24 +68,30 @@ export default function OurRance() {
 
   return (
     <>
-      <h1 className="text-center text-3xl  lg:text-4xl text-gray-800 mt-16 mb-12">
+      <h1 className="text-center text-2xl  uppercase lg:text-2xl text-gray-800 mt-4 ">
         DISCOVER OUR RANGE
       </h1>
       <Carousel
-        arrows={true}
+        additionalTransfrom={0}
+        infinite={true}
+        showDots={true}
+        autoPlay={true}
+        autoPlaySpeed={5000}
+        arrows={false}
         swipeable={true}
-         draggable={true}
-          minimumTouchDrag={5} 
+        draggable={true}
+        minimumTouchDrag={5}
+        pauseOnHover={true}
         // autoPlay={true}
         // autoPlaySpeed={3000}
         // keyBoardControl={true}
-        customTransition="transform 0.15s ease-in-out"
-        transitionDuration={150}
+        containerClass="carousel-container"
+        customTransition={`transform 1.2s ${SMOOTH_EASING}`}
+        transitionDuration={1200}
         // containerClass="carousel-container"
         // showDots
-        slidesToSlide={1}
         responsive={responsive}
-        className="sm:mt-10 pb-16 text-center "
+        className=" pb-16 text-center "
         itemClass=""
       >
         {Boxs.map((obj, i) => (
@@ -97,7 +108,7 @@ export default function OurRance() {
               className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 p-[8px]"
             />
 
-            <div className="absolute inset-0 -bottom-[38px] sm:-bottom-[37px] md:-bottom-[42px] flex items-end justify-end p-6">
+            <div className="absolute inset-0 -bottom-[38px] sm:-bottom-[37px] md:-bottom-[42px] flex items-end justify-end p-5 text-right">
               <h1 className="text-[#777] text-[14px]  sm:text-[18px] text-left whitespace-nowrap transition duration-300 border-b-2 border-gray-400">
                 {obj.Name}
               </h1>

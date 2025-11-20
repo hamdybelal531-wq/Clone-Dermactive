@@ -3,22 +3,27 @@ import Carousel from "react-multi-carousel";
 import Image from "next/image";
 
 export default function OurBlog() {
+  const SMOOTH_EASING = "cubic-bezier(0.25, 0.1, 0.25, 1)";
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1400 },
       items: 3,
+      slidesToSlide: 3,
     },
     desktop: {
       breakpoint: { max: 1400, min: 1024 },
       items: 3,
+      slidesToSlide: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 640 },
       items: 2,
+      slidesToSlide: 2,
     },
     mobile: {
       breakpoint: { max: 640, min: 0 },
       items: 1,
+      slidesToSlide: 1,
     },
   };
 
@@ -42,19 +47,22 @@ export default function OurBlog() {
 
   return (
     <>
-      <div className="lg:w-[80%] w-full mx-auto py-12 text-center pb-10">
-        <h1 className="text-center mb-12 text-5xl text-gray-800 ">Our Blog</h1>
+      <div className="lg:w-[80%] w-full mx-auto py-5 text-center pb-10">
+        <h1 className="text-center  uppercase text-2xl text-gray-800 ">
+          Our Blog
+        </h1>
 
         <Carousel
           // autoPlay={true}
+          arrows={false}
+          showDots={true}
           swipeable={true}
-         draggable={true}
-          minimumTouchDrag={5} 
-          slidesToSlide={1}
-          transitionDuration={150}
+          draggable={true}
+          minimumTouchDrag={5}
           itemClass="p-3"
           responsive={responsive}
-          customTransition="transform 0.15s ease-out"
+          customTransition={`transform 0.8s ${SMOOTH_EASING}`}
+          transitionDuration={800}
         >
           {boxes.map((box) => {
             return (

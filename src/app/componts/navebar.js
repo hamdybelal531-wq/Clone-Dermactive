@@ -143,11 +143,11 @@ export default function Navibar() {
         <HoverProduct Show={Show} SetShow={SetShow} />
         {/* Hover For Ul */}
       </motion.nav>
-        {/* ⬅️ مكون القائمة الجانبية (Mobile Menu) */}
-        <MobileMenu
-          ShowMobileMenu={ShowMobileMenu}
-          SetShowMobileMenu={SetShowMobileMenu}
-        />
+      {/* ⬅️ مكون القائمة الجانبية (Mobile Menu) */}
+      <MobileMenu
+        ShowMobileMenu={ShowMobileMenu}
+        SetShowMobileMenu={SetShowMobileMenu}
+      />
 
       {/* Carousel */}
       <div className="w-full lg:h-screen relative mt-15">
@@ -168,13 +168,13 @@ export default function Navibar() {
           <CarouselContent>
             {slider.map((img, index) => (
               <CarouselItem key={index}>
-                <div className="relative w-full max-w-full  sm:h-screen h-[60vh]">
+                <div className="relative w-full max-w-full  sm:h-[60vh] lg:h-screen h-[40vh]">
                   <Image
                     sizes="100vw"
                     src={img}
                     alt={`Slide ${index + 1}`}
                     fill
-                    className="object-contain lg:object-cover"
+                    className="object-contain md:object-cover"
                     priority
                   />
                 </div>

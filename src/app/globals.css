@@ -154,22 +154,10 @@
   background: black;
 }
 
-.react-multi-carousel-track {
-  transition: transform 0.4s ease-in-out !important;
-}
-
-@media (max-width: 768px) {
-  .react-multi-carousel-track {
-    transition: transform 0.25s ease-out !important;
-  }
-}
-
-
 .react-multi-carousel-arrow {
-    z-index: 10 !important; /* خفضه من 50 */
+  z-index: 10 !important; /* خفضه من 50 */
 }
 
 .react-multi-carousel-list .react-multiple-carousel__arrow {
-    z-index: 1 !important; 
+  z-index: 1 !important;
 }
-

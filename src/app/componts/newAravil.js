@@ -5,6 +5,7 @@ import Carousel from "react-multi-carousel";
 import { HiOutlineSearch } from "react-icons/hi";
 
 export default function NewAravil() {
+  const SMOOTH_EASING = "cubic-bezier(0.25, 0.1, 0.25, 1)";
   const boxes = [
     {
       url: "https://derm-active.com/wp-content/uploads/2023/06/Tricho-ACT-Anti-Hair-loss-Shampoo.jpg",
@@ -35,35 +36,37 @@ export default function NewAravil() {
 
   const responsive = {
     superLargeDesktop: { breakpoint: { max: 4000, min: 1400 }, items: 4 },
-    desktop: { breakpoint: { max: 1400, min: 1024 }, items: 3 },
-    tablet: { breakpoint: { max: 1024, min: 640 }, items: 2 },
-    mobile: { breakpoint: { max: 640, min: 0 }, items: 2 },
+    desktop: {
+      breakpoint: { max: 1400, min: 1024 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+    tablet: { breakpoint: { max: 1024, min: 640 }, items: 2, slidesToSlide: 2 },
+    mobile: { breakpoint: { max: 640, min: 0 }, items: 2, slidesToSlide: 2 },
   };
 
   return (
     <>
-      <div className="w-full lg:w-[75%] mx-auto sm:p-3 text-center py-12">
-        <h1 className="text-gray-800 text-5xl  text-center mb-12">
+      <div className="w-full lg:w-[75%] mx-auto sm:p-3 text-center mt-8">
+        <h1 className="text-gray-800 text-2xl  uppercase text-center ">
           New Arrival
         </h1>
         <Carousel
-          // autoPlay={true}
+          // showDots={true}
           swipeable={true}
-         draggable={true}
-          minimumTouchDrag={5} 
-          slidesToSlide={1}
-          transitionDuration={150}
-          customTransition="transform 0.15s ease-out"
+          draggable={true}
+          minimumTouchDrag={5}
+          transitionDuration={800}
+          customTransition={`transform 0.8s ${SMOOTH_EASING}`}
           responsive={responsive}
-          className="py-8"
         >
           {boxes.map((box) => {
             return (
               <div
                 key={box.id}
-                className="group  overflow-hidden transition-all duration-300  m-4 flex flex-col cursor-pointer relative"
+                className="group  overflow-hidden transition-all duration-300 mt-20  m-4 flex flex-col cursor-pointer relative"
               >
-                <div className="relative w-full h-80 overflow-hidden">
+                <div className="relative w-full sm:h-80 h-40 overflow-hidden">
                   <Image
                     src={box.url}
                     fill
