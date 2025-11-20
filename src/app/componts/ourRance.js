@@ -55,22 +55,7 @@ export default function OurRance() {
       Name: "ACTI-WHITE",
       url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
     },
-    {
-      Name: "TRICHO ACT",
-      url: "https://derm-active.com/wp-content/uploads/2023/06/864x600-Tricho-Act.jpg",
-    },
-    {
-      Name: "SWEAT CONTROL",
-      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Sweat-Control.jpg",
-    },
-    {
-      Name: "DERMA ACTIVE BABY",
-      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Baby.jpg",
-    },
-    {
-      Name: "ACTI-WHITE",
-      url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
-    },
+
     // ... باقي العناصر
   ];
 
