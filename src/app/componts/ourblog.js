@@ -61,8 +61,8 @@ export default function OurBlog() {
           minimumTouchDrag={5}
           itemClass="p-3"
           responsive={responsive}
-          customTransition={`transform 0.8s ${SMOOTH_EASING}`}
-          transitionDuration={800}
+          customTransition={`transform 0.4s ${SMOOTH_EASING}`}
+          transitionDuration={400}
         >
           {boxes.map((box) => {
             return (

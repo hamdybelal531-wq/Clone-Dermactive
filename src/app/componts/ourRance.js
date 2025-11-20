@@ -13,21 +13,29 @@ export default function OurRance() {
       breakpoint: { max: 4000, min: 1400 },
       items: 4,
       slidesToSlide: 4,
+      customTransition: `transform 1.2s ${SMOOTH_EASING}`,
+      transitionDuration: 1200,
     },
     desktop: {
       breakpoint: { max: 1400, min: 1024 },
       items: 4,
       slidesToSlide: 4,
+      customTransition: `transform 0.8s ${SMOOTH_EASING}`,
+      transitionDuration: 800,
     },
     tablet: {
       breakpoint: { max: 1024, min: 768 },
       items: 3,
       slidesToSlide: 3,
+      customTransition: `transform 0.5s ${SMOOTH_EASING}`,
+      transitionDuration: 500,
     },
     mobile: {
       breakpoint: { max: 768, min: 0 },
       items: 2,
       slidesToSlide: 2,
+      customTransition: `transform 0.5s ${SMOOTH_EASING}`,
+      transitionDuration: 500,
     },
   };
   const Boxs = [
@@ -73,7 +81,7 @@ export default function OurRance() {
       </h1>
       <Carousel
         additionalTransfrom={0}
-        infinite={true}
+        infinite={false}
         showDots={true}
         autoPlay={true}
         autoPlaySpeed={5000}
@@ -86,8 +94,6 @@ export default function OurRance() {
         // autoPlaySpeed={3000}
         // keyBoardControl={true}
         containerClass="carousel-container"
-        customTransition={`transform 1.2s ${SMOOTH_EASING}`}
-        transitionDuration={1200}
         // containerClass="carousel-container"
         // showDots
         responsive={responsive}
