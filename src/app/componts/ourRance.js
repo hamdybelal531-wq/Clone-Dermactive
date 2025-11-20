@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -10,9 +11,9 @@ export default function OurRance() {
 
   const updateDuration = () => {
     const width = window.innerWidth;
-    if (width >= 1200) setDuration(600);   // large screen
-    else if (width >= 768) setDuration(150); // tablet
-    else setDuration(50);                 // mobile
+    if (width >= 1200) setDuration(900);   // large screen
+    else if (width >= 768) setDuration(600); // tablet
+    else setDuration(350);                 // mobile
   };
 
   useEffect(() => {
