@@ -3,10 +3,24 @@ import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-// ملاحظة: لإضافة Text Shadow في Tailwind، قد تحتاج إلى إضافة مكون إضافي
-// أو تعريف الكلاس في Global CSS. سنستخدم هنا كلاسات Tailwind فقط.
 
 export default function OurRance() {
+  // duration 
+  const [duration, setDuration] = useState(500);
+
+  const updateDuration = () => {
+    const width = window.innerWidth;
+    if (width >= 1200) setDuration(600);   // large screen
+    else if (width >= 768) setDuration(150); // tablet
+    else setDuration(50);                 // mobile
+  };
+
+  useEffect(() => {
+    updateDuration(); // run on first load
+    window.addEventListener("resize", updateDuration);
+
+    return () => window.removeEventListener("resize", updateDuration);
+  }, []);
   const SMOOTH_EASING = "cubic-bezier(0.25, 0.1, 0.25, 1)";
   const responsive = {
     superLargeDesktop: {
@@ -76,8 +90,8 @@ export default function OurRance() {
         minimumTouchDrag={5}
         pauseOnHover={true}
         containerClass="carousel-container"
-        customTransition={`transform 0.15s ${SMOOTH_EASING}`}
-        transitionDuration={150}
+        customTransition={`transform ${duration}ms ${SMOOTH_EASING}`}
+        transitionDuration={duration}
         responsive={responsive}
         className=" pb-16 text-center "
         itemClass=""
