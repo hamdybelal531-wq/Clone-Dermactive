@@ -76,8 +76,8 @@ export default function OurRance() {
         minimumTouchDrag={5}
         pauseOnHover={true}
         containerClass="carousel-container"
-        customTransition={`transform 0.15s ${SMOOTH_EASING}`}
-        transitionDuration={150}
+        // customTransition={`transform 0.15s ${SMOOTH_EASING}`}
+        // transitionDuration={150}
         responsive={responsive}
         className=" pb-16 text-center "
         itemClass=""
