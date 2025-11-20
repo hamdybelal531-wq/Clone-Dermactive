@@ -13,29 +13,29 @@ export default function OurRance() {
       breakpoint: { max: 4000, min: 1400 },
       items: 4,
       slidesToSlide: 4,
-      customTransition: `transform 1.2s ${SMOOTH_EASING}`,
-      transitionDuration: 1200,
+      // customTransition: `transform 1.2s ${SMOOTH_EASING}`,
+      // transitionDuration: 1200,
     },
     desktop: {
       breakpoint: { max: 1400, min: 1024 },
       items: 4,
       slidesToSlide: 4,
-      customTransition: `transform 0.8s ${SMOOTH_EASING}`,
-      transitionDuration: 800,
+      // customTransition: `transform 0.8s ${SMOOTH_EASING}`,
+      // transitionDuration: 800,
     },
     tablet: {
       breakpoint: { max: 1024, min: 768 },
       items: 3,
       slidesToSlide: 3,
-      customTransition: `transform 0.5s ${SMOOTH_EASING}`,
-      transitionDuration: 500,
+      // customTransition: `transform 0.5s ${SMOOTH_EASING}`,
+      // transitionDuration: 500,
     },
     mobile: {
       breakpoint: { max: 768, min: 0 },
       items: 2,
       slidesToSlide: 2,
-      customTransition: `transform 0.5s ${SMOOTH_EASING}`,
-      transitionDuration: 500,
+      // customTransition: `transform 0.5s ${SMOOTH_EASING}`,
+      // transitionDuration: 500,
     },
   };
   const Boxs = [
@@ -90,12 +90,9 @@ export default function OurRance() {
         draggable={true}
         minimumTouchDrag={5}
         pauseOnHover={true}
-        // autoPlay={true}
-        // autoPlaySpeed={3000}
-        // keyBoardControl={true}
         containerClass="carousel-container"
-        // containerClass="carousel-container"
-        // showDots
+        customTransition={`transform 0.4s ${SMOOTH_EASING}`}
+        transitionDuration={400}
         responsive={responsive}
         className=" pb-16 text-center "
         itemClass=""

@@ -56,8 +56,8 @@ export default function NewAravil() {
           swipeable={true}
           draggable={true}
           minimumTouchDrag={5}
-          transitionDuration={400}
-          customTransition={`transform 0.4s ${SMOOTH_EASING}`}
+          transitionDuration={200}
+          customTransition={`transform 0.2s ${SMOOTH_EASING}`}
           responsive={responsive}
         >
           {boxes.map((box) => {
