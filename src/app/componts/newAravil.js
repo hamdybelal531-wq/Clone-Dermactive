@@ -3,8 +3,25 @@ import { Search } from "lucide-react";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import { HiOutlineSearch } from "react-icons/hi";
+import { useState, useEffect } from "react";
+
 
 export default function NewAravil() {
+   const [duration, setDuration] = useState(500);
+
+  const updateDuration = () => {
+    const width = window.innerWidth;
+    if (width >= 1200) setDuration(900);   // large screen
+    else if (width >= 768) setDuration(600); // tablet
+    else setDuration(350);                 // mobile
+  };
+
+  useEffect(() => {
+    updateDuration(); // run on first load
+    window.addEventListener("resize", updateDuration);
+
+    return () => window.removeEventListener("resize", updateDuration);
+  }, []);
   const SMOOTH_EASING = "cubic-bezier(0.25, 0.1, 0.25, 1)";
   const boxes = [
     {
@@ -56,8 +73,8 @@ export default function NewAravil() {
           swipeable={true}
           draggable={true}
           minimumTouchDrag={5}
-          transitionDuration={150}
-          customTransition={`transform 0.15s ${SMOOTH_EASING}`}
+          transitionDuration={duration}
+          customTransition={`transform ${duration}ms ${SMOOTH_EASING}`}
           responsive={responsive}
         >
           {boxes.map((box) => {
