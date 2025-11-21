@@ -1,8 +1,27 @@
 "use client";
 import Carousel from "react-multi-carousel";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
+const calculateDuration = () => {
+  if (typeof window !== "undefined") {
+    const width = window.innerWidth;
+    return width >= 1200 ? 900 : width >= 768 ? 600 : 350;
+  }
+  return 500;
+};
 export default function OurBlog() {
+  const [duration, setDuration] = useState(calculateDuration);
+
+  const updateDuration = useCallback(() => {
+    setDuration(calculateDuration());
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDuration);
+
+    return () => window.removeEventListener("resize", updateDuration);
+  }, [updateDuration]);
   const SMOOTH_EASING = "cubic-bezier(0.25, 0.1, 0.25, 1)";
   const responsive = {
     superLargeDesktop: {
@@ -61,8 +80,8 @@ export default function OurBlog() {
           minimumTouchDrag={5}
           itemClass="p-3"
           responsive={responsive}
-          customTransition={`transform 0.15s ${SMOOTH_EASING}`}
-          transitionDuration={150}
+          customTransition={`transform ${duration}ms ${SMOOTH_EASING}`}
+          transitionDuration={duration}
         >
           {boxes.map((box) => {
             return (

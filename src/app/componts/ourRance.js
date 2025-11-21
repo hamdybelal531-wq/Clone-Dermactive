@@ -1,12 +1,29 @@
 "use client";
 import Image from "next/image";
+import { useState, useEffect, useCallback } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-// ملاحظة: لإضافة Text Shadow في Tailwind، قد تحتاج إلى إضافة مكون إضافي
-// أو تعريف الكلاس في Global CSS. سنستخدم هنا كلاسات Tailwind فقط.
+const calculateDuration = () => {
+  if (typeof window !== "undefined") {
+    const width = window.innerWidth;
+    return width >= 1200 ? 900 : width >= 768 ? 600 : 350;
+  }
+  return 500;
+};
 
 export default function OurRance() {
+  const [duration, setDuration] = useState(calculateDuration);
+
+  const updateDuration = useCallback(() => {
+    setDuration(calculateDuration());
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDuration);
+
+    return () => window.removeEventListener("resize", updateDuration);
+  }, [updateDuration]);
   const SMOOTH_EASING = "cubic-bezier(0.25, 0.1, 0.25, 1)";
   const responsive = {
     superLargeDesktop: {
@@ -55,6 +72,22 @@ export default function OurRance() {
       Name: "ACTI-WHITE",
       url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
     },
+    {
+      Name: "TRICHO ACT",
+      url: "https://derm-active.com/wp-content/uploads/2023/06/864x600-Tricho-Act.jpg",
+    },
+    {
+      Name: "SWEAT CONTROL",
+      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Sweat-Control.jpg",
+    },
+    {
+      Name: "DERMA ACTIVE BABY",
+      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Baby.jpg",
+    },
+    {
+      Name: "ACTI-WHITE",
+      url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
+    },
 
     // ... باقي العناصر
   ];
@@ -66,7 +99,7 @@ export default function OurRance() {
       </h1>
       <Carousel
         additionalTransfrom={0}
-        infinite={false}
+        infinite={true}
         showDots={true}
         autoPlay={true}
         autoPlaySpeed={5000}
@@ -76,6 +109,8 @@ export default function OurRance() {
         minimumTouchDrag={5}
         pauseOnHover={true}
         containerClass="carousel-container"
+        customTransition={`transform ${duration}ms ${SMOOTH_EASING}`}
+        transitionDuration={duration}
         responsive={responsive}
         className=" pb-16 text-center "
         itemClass=""
