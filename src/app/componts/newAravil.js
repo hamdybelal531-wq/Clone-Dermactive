@@ -3,7 +3,7 @@ import { Search } from "lucide-react";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import { HiOutlineSearch } from "react-icons/hi";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const calculateDuration = () => {
   if (typeof window !== "undefined") {
