@@ -1,7 +1,7 @@
 "use client";
 import Carousel from "react-multi-carousel";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback  } from "react";
 
 const calculateDuration = () => {
   if (typeof window !== "undefined") {
