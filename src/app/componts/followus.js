@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 export default function NewsletterSection() {
+  const newsletterImageSizes = "(max-width: 768px) 90vw, 500px";
   return (
     <section className="w-full py-5 px-6">
       {/* Title */}
@@ -22,7 +23,7 @@ export default function NewsletterSection() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-3 outline-none"
+              className="w-full px-4 py-3 outline-none text-[15px] md:text-[20px]"
             />
             <button className="px-6 bg-black text-white text-sm tracking-wide">
               SUBSCRIBE
@@ -38,6 +39,7 @@ export default function NewsletterSection() {
             height={300}
             alt="newsletter"
             className="object-cover"
+            sizes={newsletterImageSizes}
           />
         </div>
       </div>

@@ -65,7 +65,8 @@ export default function NewAravil() {
     tablet: { breakpoint: { max: 1024, min: 640 }, items: 2, slidesToSlide: 2 },
     mobile: { breakpoint: { max: 640, min: 0 }, items: 2, slidesToSlide: 2 },
   };
-
+  const newArrivalItemSizes =
+    "(max-width: 1024px) 50vw, (max-width: 1400px) 25vw, 20vw";
   return (
     <>
       <div className="w-full lg:w-[75%] mx-auto sm:p-3 text-center mt-8">
@@ -89,6 +90,7 @@ export default function NewAravil() {
               >
                 <div className="relative w-full sm:h-80 h-40 overflow-hidden">
                   <Image
+                    sizes={newArrivalItemSizes}
                     src={box.url}
                     fill
                     alt={box.name}
@@ -99,7 +101,7 @@ export default function NewAravil() {
                 {box.url2 ? (
                   <div className="absolute -top-2 left-0 w-full h-full">
                     <Image
-                      sizes="100vw"
+                      sizes={newArrivalItemSizes}
                       src={box.url2}
                       alt="Second View"
                       fill

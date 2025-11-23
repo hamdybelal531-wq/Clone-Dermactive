@@ -92,6 +92,8 @@ export default function OurRance() {
     // ... باقي العناصر
   ];
 
+  const carouselItemSizes =
+    "(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw";
   return (
     <>
       <h1 className="text-center text-2xl  uppercase lg:text-2xl text-gray-800 mt-4 ">
@@ -121,7 +123,7 @@ export default function OurRance() {
             className="relative w-full h-35 sm:h-60 md:h-60 group  cursor-pointer"
           >
             <Image
-              sizes="100vw"
+              sizes={carouselItemSizes}
               src={obj.url}
               alt={obj.Name}
               fill

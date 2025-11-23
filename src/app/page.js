@@ -5,6 +5,7 @@ import OurBlog from "./componts/ourblog";
 import Readmore from "./componts/redmore";
 import NewsletterSection from "./componts/followus";
 import Header from "./componts/header";
+import ProductsPage from "./products/[slug]/page";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <OurBlog />
       <Readmore />
       <NewsletterSection />
-      {/* <div className="w-7xl py-14 m-auto h-8 bg-white"></div> */}
+      {/* <ProductsPage /> */}
     </>
   );
 }

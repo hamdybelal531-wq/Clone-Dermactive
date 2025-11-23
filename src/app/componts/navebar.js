@@ -39,7 +39,7 @@ export default function Navibar() {
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50  px-10"
       >
-        <div className=" z-[99999] w-full flex justify-center md:justify-between items-center transition-all relative p-2">
+        <div className=" z-[99999] w-full flex justify-center lg:justify-between items-center transition-all relative p-2">
           <Image
             src="https://derm-active.com/wp-content/uploads/2023/01/Untitled-2-01.png"
             alt="Logo"
@@ -86,7 +86,7 @@ export default function Navibar() {
               </li>
             ))}
           </ul>
-          <div className="relative w-full max-w-sm md:block hidden">
+          <div className="relative w-full max-w-sm lg:block hidden">
             <input
               type="search"
               placeholder="Search"
