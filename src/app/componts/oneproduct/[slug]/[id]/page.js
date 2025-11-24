@@ -259,7 +259,7 @@ export default function OneProduct({ params }) {
                     alt="Un"
                     fill
                     sizes="30vw"
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <div
@@ -288,7 +288,7 @@ export default function OneProduct({ params }) {
           </div>
         </div>
         {/* Details to Buy */}
-        <div className="bg-white max-h-500px w-[95%] md:my-20  mx-auto shadow-sm  border-2 border-[#e9e4e475] p-10">
+        <div className="bg-white max-h-500px w-[95%] md:my-30  mx-auto shadow-sm  border-2 border-[#e9e4e475] p-10">
           <span className="text-[#777]">Home /</span>{" "}
           <span className="text-[#222]">{groupItems.title}</span>
           <p className="text-[#666] text-[25px] mt-3">{product.name}</p>
