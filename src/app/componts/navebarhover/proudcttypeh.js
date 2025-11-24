@@ -1,21 +1,37 @@
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 // بيانات المجموعات (Ranges Data)
 //
 const rangesData = [
   {
     name: "Cleansers",
-    products: [" ACTI-CLEAR Gentle Cleansing Gel", "ACTI-WHITE Foaming Gel"],
+    products: [
+      {
+        name: "ACTI-CLEAR Gentle Cleansing Gel",
+        collectionKey: "acti-clear",
+        id: 1,
+      },
+      { name: "ACTI-WHITE Foaming Gel", collectionKey: "acti-white", id: 1 },
+    ],
     imageSrc:
       "https://derm-active.com/wp-content/uploads/2023/01/864x600-9.jpg",
   },
   {
     name: "Face Care",
     products: [
-      "ACTI-CLEAR Hydra-Mattifying Gel",
-      "ACTI-WHITE Depigmenting Cream",
-      "ACTI-WHITE Eye Contour",
+      {
+        name: "ACTI-CLEAR Hydra-Mattifying Gel",
+        collectionKey: "acti-clear",
+        id: 2,
+      },
+      {
+        name: "ACTI-WHITE Depigmenting Cream",
+        collectionKey: "acti-white",
+        id: 3,
+      },
+      { name: "ACTI-WHITE Eye Contour", collectionKey: "acti-white", id: 4 },
     ],
     imageSrc:
       "https://derm-active.com/wp-content/uploads/2023/01/864x600-3.jpg",
@@ -23,12 +39,36 @@ const rangesData = [
   {
     name: "Sun Protection",
     products: [
-      "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
-      "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
-      "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
-      "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
-      "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
-      "ACTI-SOLAIRE SPF50+ KIDS",
+      {
+        name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
+        collectionKey: "acti-solaire",
+        id: 4,
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
+        collectionKey: "acti-solaire",
+        id: 5,
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
+        collectionKey: "acti-solaire",
+        id: 3,
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
+        collectionKey: "acti-solaire",
+        id: 1,
+      }, // تم الربط بالـ ID 1
+      {
+        name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
+        collectionKey: "acti-solaire",
+        id: 2,
+      },
+      {
+        name: "ACTI-SOLAIRE SPF50+ KIDS",
+        collectionKey: "acti-solaire",
+        id: 6,
+      },
     ],
     imageSrc:
       "https://derm-active.com/wp-content/uploads/2023/05/864x600-Acti-Solaire.jpg",
@@ -36,24 +76,46 @@ const rangesData = [
   {
     name: "Serums",
     products: [
-      " ACTI-CLEAR Correcting Serum",
-      "ACTI-WHITE Brightening Correcting Serum",
+      {
+        name: " ACTI-CLEAR Correcting Serum",
+        collectionKey: "acti-clear",
+        id: 3,
+      },
+      {
+        name: "ACTI-WHITE Brightening Correcting Serum",
+        collectionKey: "acti-white",
+        id: 2,
+      },
     ],
     imageSrc:
       "https://derm-active.com/wp-content/uploads/2023/01/864x600-4.jpg",
   },
   {
     name: "Eye Care",
-    products: [" ACTI-WHITE Eye Contour"],
+    products: [
+      { name: " ACTI-WHITE Eye Contour", collectionKey: "acti-white", id: 4 },
+    ],
     imageSrc:
       "https://derm-active.com/wp-content/uploads/2023/02/864x600-7.jpg",
   },
   {
     name: "Shampoo & Masks",
     products: [
-      "TRICHO-ACT Anti-Hair loss Shampoo",
-      "TRICHO-ACT Anti-Dandruff Shampoo DS",
-      "TRICHO-ACT Hair Repairing Mask",
+      {
+        name: "TRICHO-ACT Anti-Hair loss Shampoo",
+        collectionKey: "tricho-act",
+        id: 1,
+      },
+      {
+        name: "TRICHO-ACT Anti-Dandruff Shampoo DS",
+        collectionKey: "tricho-act",
+        id: 2,
+      },
+      {
+        name: "TRICHO-ACT Hair Repairing Mask",
+        collectionKey: "tricho-act",
+        id: 3,
+      },
     ],
     imageSrc:
       "https://derm-active.com/wp-content/uploads/2023/01/864x600-5.jpg",
@@ -71,7 +133,7 @@ export default function HoverProduct({ Show, SetShow }) {
       >
         <span
           style={{
-            color: namePrudct === range.name ? "#777" : "",
+            color: namePrudct === range.name ? "#777" : "black",
           }}
           onMouseEnter={() => setNamePrudect(range.name)}
           className="hover:text-[#777]"
@@ -97,10 +159,20 @@ export default function HoverProduct({ Show, SetShow }) {
                 : "0px",
           }}
         >
-          {range.products.map((product) => (
-            <li key={product}>{product}</li>
+          {range.products.map((product, index) => (
+            // استخدام Link هنا لربط المنتج بصفحته
+            <Link
+              key={index}
+              href={`/componts/oneproduct/${
+                product.collectionKey
+              }/${product.id.toString()}`}
+            >
+              <li key={product.name} className="hover:text-black">
+                {product.name}
+              </li>
+            </Link>
           ))}
-          {/*  الصورة */}
+          {/* الصورة */}
           <div className="p-20 absolute lg:w-[400px] xl:w-[700px] h-[450px] top-0 lg:-right-[250px] xl:-right-[600px]">
             <Image
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

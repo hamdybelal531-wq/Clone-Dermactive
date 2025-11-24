@@ -6,6 +6,7 @@ import Readmore from "./componts/redmore";
 import NewsletterSection from "./componts/followus";
 import Header from "./componts/header";
 import ProductsPage from "./products/[slug]/page";
+import OneProduct from "./componts/oneproduct/[slug]/[id]/page";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <OurBlog />
       <Readmore />
       <NewsletterSection />
-      {/* <ProductsPage /> */}
+      {/* <OneProduct /> */}
     </>
   );
 }

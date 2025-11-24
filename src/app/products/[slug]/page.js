@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Products from "@/app/data/products";
 import React from "react";
+import Link from "next/link";
 
 export default function ProductsPage({ params }) {
   const { slug } = React.use(params);
@@ -28,6 +29,8 @@ export default function ProductsPage({ params }) {
     );
   }
   const itemSizes = "(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw";
+  const collectionKey = slug;
+
   return (
     <>
       <div className="pt-20 ">
@@ -57,69 +60,71 @@ export default function ProductsPage({ params }) {
       <div>
         <div className="text-center   m-auto  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 justify-items-center lg:w-[900px] xl:w-[1160px]">
           {Product.items.map((item) => {
+            const productLink = `/componts/oneproduct/${collectionKey}/${item.id.toString()}`;
             return (
-              <div
-                key={item.id}
-                onMouseLeave={() => {
-                  if (Show === item.id) {
-                    SetShow(0);
-                  }
-                }}
-                onMouseEnter={() => {
-                  if (Show !== item.id) {
-                    SetShow(item.id);
-                  }
-                }}
-                className={` relative p-10 lg:p-15 xl:p-10 m-5  ${
-                  Show === item.id ? "shadow-2xl" : ""
-                } w-full  lg:w-[300px] `}
-              >
+              <Link key={item.id} href={productLink}>
                 <div
-                  className={` relative h-50 sm:h-80 flex items-center justify-center`}
+                  onMouseLeave={() => {
+                    if (Show === item.id) {
+                      SetShow(0);
+                    }
+                  }}
+                  onMouseEnter={() => {
+                    if (Show !== item.id) {
+                      SetShow(item.id);
+                    }
+                  }}
+                  className={` relative p-10 lg:p-15 xl:p-10 m-5  ${
+                    Show === item.id ? "shadow-2xl" : ""
+                  } w-full  lg:w-[300px] `}
                 >
-                  <Image
-                    sizes={itemSizes}
-                    src={item.img}
-                    alt="unkhown"
-                    fill
-                    className={` transition-all duration-800 ease-in-out object-cover ${
-                      !item.imgHover ? "hover:scale-105" : "scale-100"
-                    }`}
-                  />
-                  {item.imgHover ? (
-                    <div className="absolute w-full h-full inset-0">
-                      <Image
-                        sizes={itemSizes}
-                        src={item.imgHover}
-                        alt="un"
-                        fill
-                        className={`transition-all opacity-0     duration-800 ease-in-out object-cover p-3 ${
-                          Show === item.id
-                            ? "lg:opacity-100 lg:scale-105"
-                            : "opacity-0 scale-90"
-                        } scale-3d`}
-                      />
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                </div>
-                <div className="">
-                  <h1 className="text-center text-[#777] text-[17px] mt-5 ">
-                    {Product.title.toUpperCase()}
-                  </h1>
-                  <p className="text-center text-[#222] mt-2  sm:text-[19px] text-[14px]">
-                    {item.name}
-                  </p>
-                  <p
-                    className={` transition-all pointer-events-none z-50 absolute bg-white bottom-10 translate-y-full  shadow-lg h-fit left-0 text-center text-[#666] w-full m-auto pb-7 pt-2 px-5 sm:text-[15px] text-[14px] ${
-                      Show === item.id ? "opacity-100" : "opacity-0"
-                    }`}
+                  <div
+                    className={` relative h-50 sm:h-80 flex items-center justify-center`}
                   >
-                    {item.prag}
-                  </p>
+                    <Image
+                      sizes={itemSizes}
+                      src={item.img}
+                      alt="unkhown"
+                      fill
+                      className={` transition-all duration-800 ease-in-out object-cover ${
+                        !item.imgHover ? "hover:scale-105" : "scale-100"
+                      }`}
+                    />
+                    {item.imgHover ? (
+                      <div className="absolute w-full h-full inset-0">
+                        <Image
+                          sizes={itemSizes}
+                          src={item.imgHover}
+                          alt="un"
+                          fill
+                          className={`transition-all opacity-0     duration-800 ease-in-out object-cover p-3 ${
+                            Show === item.id
+                              ? "lg:opacity-100 lg:scale-105"
+                              : "opacity-0 scale-90"
+                          } scale-3d`}
+                        />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  <div className="">
+                    <h1 className="text-center text-[#777] text-[17px] mt-5 ">
+                      {Product.title.toUpperCase()}
+                    </h1>
+                    <p className="text-center text-[#222] mt-2  sm:text-[19px] text-[14px]">
+                      {item.name}
+                    </p>
+                    <p
+                      className={` transition-all pointer-events-none z-50 absolute bg-white bottom-10 translate-y-full  shadow-lg h-fit left-0 text-center text-[#666] w-full m-auto pb-7 pt-2 px-5 sm:text-[15px] text-[14px] ${
+                        Show === item.id ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      {item.prag}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

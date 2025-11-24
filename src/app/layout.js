@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ThemeProviderAll from "./componts/themeprovider";
+// import ThemeProviderAll from "./componts/themeprovider";
 import Navibar from "./componts/navebar";
 import Footer from "./componts/footer";
 
@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProviderAll>
-          <Navibar />
-          {children}
-          <Footer />
-        </ThemeProviderAll>
+        {/* <ThemeProviderAll> */}
+        <Navibar />
+        {children}
+        <Footer />
+        {/* </ThemeProviderAll> */}
       </body>
     </html>
   );

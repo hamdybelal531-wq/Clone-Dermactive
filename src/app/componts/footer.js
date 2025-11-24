@@ -51,7 +51,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li>
               <Link href={"/products/acti-clear"}>
-                <spane className="hover:text-white">ACTI-CLEAR</spane>
+                <span className="hover:text-white">ACTI-CLEAR</span>
               </Link>
             </li>
             <li>

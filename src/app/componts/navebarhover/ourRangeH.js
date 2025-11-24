@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 // بيانات المجموعات (Ranges Data)
 const rangesData = [
   {
-    name: "Acti Clear",
+    name: "Acti-Clear",
     products: [
       "ACTI-CLEAR Gentle Cleansing Gel",
       "ACTI-CLEAR Hydra-Mattifying Gel",
@@ -15,7 +16,7 @@ const rangesData = [
       "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Clear.jpg",
   },
   {
-    name: "Acti White",
+    name: "Acti-White",
     products: [
       "ACTI-WHITE Foaming Gel",
       "ACTI-WHITE Brightening Correcting Serum",
@@ -27,7 +28,7 @@ const rangesData = [
       "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
   },
   {
-    name: "Acti Solair",
+    name: "Acti-Solaire",
     products: [
       "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
       "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
@@ -38,7 +39,7 @@ const rangesData = [
       "https://derm-active.com/wp-content/uploads/2023/05/864x600-Acti-Solaire-1.jpg",
   },
   {
-    name: "Acti Repair",
+    name: "Acti-Repair",
     products: [
       "ACTI-REPAIR CICA Cream",
       "ACTI-REPAIR Soothing Cleansing Gel",
@@ -49,7 +50,7 @@ const rangesData = [
       "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Repair.jpg",
   },
   {
-    name: "Tricho Act",
+    name: "Tricho-Act",
     products: [
       "TRICHO-ACT Anti-Hair loss Shampoo",
       "TRICHO-ACT Anti-Dandruff Shampoo DS",
@@ -72,7 +73,7 @@ export default function HoverOurRange({ Show, SetShow }) {
       >
         <span
           style={{
-            color: nameAction === range.name ? "#777" : "",
+            color: nameAction === range.name ? "#777" : "black",
           }}
           onMouseEnter={() => setNameAction(range.name)}
           className="hover:text-[#777]"
@@ -85,19 +86,26 @@ export default function HoverOurRange({ Show, SetShow }) {
           style={{
             display: nameAction === range.name ? "flex" : "none",
             left:
-              range.name === "Acti White"
+              range.name === "Acti-White"
                 ? "-120px"
-                : range.name === "Acti Solair"
+                : range.name === "Acti-Solaire"
                 ? "-260px"
-                : range.name === "Acti Repair"
+                : range.name === "Acti-Repair"
                 ? "-390px"
-                : range.name === "Tricho Act"
+                : range.name === "Tricho-Act"
                 ? "-530px"
                 : "0px",
           }}
         >
-          {range.products.map((product) => (
-            <li key={product}>{product}</li>
+          {range.products.map((product, index) => (
+            <Link
+              key={index}
+              href={`/componts/oneproduct/${range.name.toLowerCase()}/${(
+                index + 1
+              ).toString()}`}
+            >
+              <li>{product}</li>
+            </Link>
           ))}
           {/*  الصورة */}
           <div className="p-10 absolute lg:w-[400px] xl:w-[700px] h-[400px] top-0 lg:-right-[250px] xl:-right-[600px]">
