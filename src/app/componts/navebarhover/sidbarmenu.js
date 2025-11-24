@@ -477,15 +477,22 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
               <div key={tab.title} className="mb-2 border-b border-gray-100">
                 {/* [!!!] رابط لـ About Dermactive إذا لم يكن به أقسام فرعية */}
                 {tab.sections.length === 0 ? (
-                  <Link
-                    href="/about-dermactive"
-                    onClick={() => SetShowMobileMenu(false)}
-                  >
-                    <div
-                      className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium text-black hover:text-[#777]`}
-                    >
-                      {tab.title}
-                    </div>
+                  <Link href="#" onClick={() => SetShowMobileMenu(false)}>
+                    {tab.title === "About Dermactive" ? (
+                      <Link href={`/aboutus`}>
+                        <div
+                          className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium text-black hover:text-[#777]`}
+                        >
+                          {tab.title}
+                        </div>
+                      </Link>
+                    ) : (
+                      <div
+                        className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium text-black hover:text-[#777]`}
+                      >
+                        {tab.title}
+                      </div>
+                    )}
                   </Link>
                 ) : (
                   // القائمة الرئيسية القابلة للفتح (Accordion Header)
