@@ -41,10 +41,10 @@ const rangesData = [
   {
     name: "Acti-Repair",
     products: [
-      "ACTI-REPAIR CICA Cream",
       "ACTI-REPAIR Soothing Cleansing Gel",
-      "ACTI-REPAIR Hydro Gel",
+      "ACTI-REPAIR CICA Cream",
       "ACTI-REPAIR Emollient Extreme",
+      "ACTI-REPAIR Hydro Gel",
     ],
     imageSrc:
       "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Repair.jpg",
@@ -71,15 +71,17 @@ export default function HoverOurRange({ Show, SetShow }) {
         key={range.name}
         className="hover:text-[#777] cursor-pointer relative text-[20px] whitespace-nowrap"
       >
-        <span
-          style={{
-            color: nameAction === range.name ? "#777" : "black",
-          }}
-          onMouseEnter={() => setNameAction(range.name)}
-          className="hover:text-[#777]"
-        >
-          {range.name}
-        </span>
+        <Link href={`/products/${range.name.toLowerCase()}`}>
+          <span
+            style={{
+              color: nameAction === range.name ? "#777" : "black",
+            }}
+            onMouseEnter={() => setNameAction(range.name)}
+            className="hover:text-[#777]"
+          >
+            {range.name}
+          </span>
+        </Link>
         {/* القائمة الفرعية والصورة */}
         <ul
           className="p-10 flex-col gap-5 absolute top-full min-w-[700px] text-[#777]"

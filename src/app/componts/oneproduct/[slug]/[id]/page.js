@@ -240,7 +240,7 @@ export default function OneProduct({ params }) {
             </Carousel>
           </div>
           {/* Some Photo */}
-          <div className="Photos w-[280px] flex h-[120px] mt-5 ">
+          <div className="Photos w-[280px] flex h-[120px] mt-5  ">
             {product.imgHover ? (
               <>
                 <div
@@ -288,7 +288,7 @@ export default function OneProduct({ params }) {
           </div>
         </div>
         {/* Details to Buy */}
-        <div className="bg-white max-h-500px w-[95%] md:my-30  mx-auto shadow-sm  border-2 border-[#e9e4e475] p-10">
+        <div className="bg-white max-h-500px w-[95%] sm:my-20 md:my-30  mx-auto shadow-sm  border-2 border-[#e9e4e475] p-10">
           <span className="text-[#777]">Home /</span>{" "}
           <span className="text-[#222]">{groupItems.title}</span>
           <p className="text-[#666] text-[25px] mt-3">{product.name}</p>
@@ -335,7 +335,7 @@ export default function OneProduct({ params }) {
                   key={item.id}
                   href={`/componts/oneproduct/${slug.toLowerCase()}/${item.id.toString()}`}
                 >
-                  <div className="group w-full overflow-hidden transition-all duration-300 md:mt-20  m-4 flex flex-col cursor-pointer relative">
+                  <div className="group w-full overflow-hidden transition-all duration-300 md:mt-20  flex flex-col cursor-pointer relative">
                     <div className="relative w-full sm:h-70 h-100 overflow-hidden">
                       <Image
                         sizes={newArrivalItemSizes}

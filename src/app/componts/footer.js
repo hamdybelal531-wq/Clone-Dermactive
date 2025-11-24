@@ -28,9 +28,9 @@ export default function Footer() {
           <h3 className="text-white text-lg font-semibold mb-4">DERMACTIVE</h3>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href="#" className="hover:text-white">
-                About
-              </a>
+              <Link href={"/aboutus"}>
+                <span className="hover:text-white">About</span>
+              </Link>
             </li>
             <li>
               <a href="#" className="hover:text-white">

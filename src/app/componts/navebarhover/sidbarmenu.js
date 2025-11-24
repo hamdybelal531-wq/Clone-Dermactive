@@ -4,9 +4,10 @@ import { useState } from "react";
 import { HiX, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineSearch } from "react-icons/hi";
+import Link from "next/link";
 
 // بيانات القوائم الرئيسية الثلاث التي ستظهر في القائمة الجانبية
-
+// تم تحديث collectionKey و id لتتناسب مع ملف Products.js
 const menuData = [
   {
     title: "Our Range",
@@ -14,47 +15,142 @@ const menuData = [
       {
         name: "Acti Clear",
         products: [
-          "ACTI-CLEAR Gentle Cleansing Gel",
-          "ACTI-CLEAR Hydra-Mattifying Gel",
-          "ACTI-CLEAR Correcting Serum",
-          "ACTI-CLEAR Global AC Cream",
+          {
+            name: "ACTI-CLEAR Gentle Cleansing Gel",
+            collectionKey: "acti-clear",
+            id: 1,
+          },
+          {
+            name: "ACTI-CLEAR Hydra-Mattifying Gel",
+            collectionKey: "acti-clear",
+            id: 2,
+          },
+          {
+            name: "ACTI-CLEAR Correcting Serum",
+            collectionKey: "acti-clear",
+            id: 3,
+          },
+          {
+            name: "ACTI-CLEAR Global AC Cream",
+            collectionKey: "acti-clear",
+            id: 4,
+          },
         ],
       },
       {
         name: "Acti White",
         products: [
-          "ACTI-WHITE Foaming Gel",
-          "ACTI-WHITE Brightening Correcting Serum",
-          "ACTI-WHITE Depigmenting Cream",
-          "ACTI-WHITE Eye Contour",
-          "ACTI-WHITE 2in1 Body Milk",
+          {
+            name: "ACTI-WHITE Foaming Gel",
+            collectionKey: "acti-white",
+            id: 1,
+          },
+          {
+            name: "ACTI-WHITE Brightening Correcting Serum",
+            collectionKey: "acti-white",
+            id: 2,
+          },
+          {
+            name: "ACTI-WHITE Depigmenting Cream",
+            collectionKey: "acti-white",
+            id: 3,
+          },
+          {
+            name: "ACTI-WHITE Eye Contour",
+            collectionKey: "acti-white",
+            id: 4,
+          },
+          {
+            name: "ACTI-WHITE 2in1 Body Milk",
+            collectionKey: "acti-white",
+            id: 5,
+          },
         ],
       },
       {
         name: "Acti Solair",
         products: [
-          "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
-          "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
-          "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
-          "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
+          {
+            name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
+            collectionKey: "acti-solaire",
+            id: 4,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
+            collectionKey: "acti-solaire",
+            id: 5,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
+            collectionKey: "acti-solaire",
+            id: 3,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
+            collectionKey: "acti-solaire",
+            id: 1, // تصحيح: تم تبديل هذا المنتج مع SPF 50+ Ultra Fluid Light Tinted في السابق
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
+            collectionKey: "acti-solaire",
+            id: 2,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF50+ KIDS",
+            collectionKey: "acti-solaire",
+            id: 6,
+          },
         ],
       },
       {
         name: "Acti Repair",
         products: [
-          "ACTI-REPAIR CICA Cream",
-          "ACTI-REPAIR Soothing Cleansing Gel",
-          "ACTI-REPAIR Hydro Gel",
-          "ACTI-REPAIR Emollient Extreme",
+          // تصحيح الأرقام التعريفية (ID) لتطابق ملف Products.js
+          {
+            name: "ACTI-REPAIR CICA Cream",
+            collectionKey: "acti-repair",
+            id: 2,
+          },
+          {
+            name: "ACTI-REPAIR Soothing Cleansing Gel",
+            collectionKey: "acti-repair",
+            id: 1,
+          },
+          {
+            name: "ACTI-REPAIR Hydro Gel",
+            collectionKey: "acti-repair",
+            id: 4,
+          },
+          {
+            name: "ACTI-REPAIR Emollient Extreme",
+            collectionKey: "acti-repair",
+            id: 3,
+          },
         ],
       },
       {
         name: "Tricho Act",
         products: [
-          "TRICHO-ACT Anti-Hair loss Shampoo",
-          "TRICHO-ACT Anti-Dandruff Shampoo DS",
-          "TRICHO-ACT Hair Repairing Mask",
-          "TRICHO-ACT Anti-Hair Loss Lotion Concentrate",
+          {
+            name: "TRICHO-ACT Anti-Hair loss Shampoo",
+            collectionKey: "tricho-act",
+            id: 1,
+          },
+          {
+            name: "TRICHO-ACT Anti-Dandruff Shampoo DS",
+            collectionKey: "tricho-act",
+            id: 2,
+          },
+          {
+            name: "TRICHO-ACT Hair Repairing Mask",
+            collectionKey: "tricho-act",
+            id: 3,
+          },
+          {
+            name: "TRICHO-ACT Anti-Hair Loss Lotion Concentrate",
+            collectionKey: "tricho-act",
+            id: 4,
+          },
         ],
       },
     ],
@@ -65,49 +161,142 @@ const menuData = [
       {
         name: "Oily & Acne - prone skin",
         products: [
-          "ACTI-CLEAR Gentle Cleansing Gel",
-          "ACTI-CLEAR Hydra-Mattifying Gel",
-          "ACTI-CLEAR Correcting Serum",
-          "ACTI-CLEAR Global AC Cream",
+          {
+            name: "ACTI-CLEAR Gentle Cleansing Gel",
+            collectionKey: "acti-clear",
+            id: 1,
+          },
+          {
+            name: "ACTI-CLEAR Hydra-Mattifying Gel",
+            collectionKey: "acti-clear",
+            id: 2,
+          },
+          {
+            name: "ACTI-CLEAR Correcting Serum",
+            collectionKey: "acti-clear",
+            id: 3,
+          },
+          {
+            name: "ACTI-CLEAR Global AC Cream",
+            collectionKey: "acti-clear",
+            id: 4,
+          },
         ],
       },
       {
         name: "Un-Even & Pigmented Skin",
         products: [
-          "ACTI-WHITE Foaming Gel",
-          "ACTI-WHITE Brightening Correcting Serum",
-          "ACTI-WHITE Depigmenting Cream",
-          "ACTI-WHITE Eye Contour",
-          "ACTI-WHITE 2in1 Body Milk",
+          {
+            name: "ACTI-WHITE Foaming Gel",
+            collectionKey: "acti-white",
+            id: 1,
+          },
+          {
+            name: "ACTI-WHITE Brightening Correcting Serum",
+            collectionKey: "acti-white",
+            id: 2,
+          },
+          {
+            name: "ACTI-WHITE Depigmenting Cream",
+            collectionKey: "acti-white",
+            id: 3,
+          },
+          {
+            name: "ACTI-WHITE Eye Contour",
+            collectionKey: "acti-white",
+            id: 4,
+          },
+          {
+            name: "ACTI-WHITE 2in1 Body Milk",
+            collectionKey: "acti-white",
+            id: 5,
+          },
         ],
       },
       {
         name: "Sun Exposure",
         products: [
-          "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
-          "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
-          "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
-          "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
-          "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
-          "ACTI-SOLAIRE SPF50+ KIDS",
+          {
+            name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
+            collectionKey: "acti-solaire",
+            id: 4,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
+            collectionKey: "acti-solaire",
+            id: 5,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
+            collectionKey: "acti-solaire",
+            id: 3,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
+            collectionKey: "acti-solaire",
+            id: 1,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
+            collectionKey: "acti-solaire",
+            id: 2,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF50+ KIDS",
+            collectionKey: "acti-solaire",
+            id: 6,
+          },
         ],
       },
       {
         name: "Irritated & Damaged Skin",
         products: [
-          "ACTI-REPAIR CICA Cream",
-          "ACTI-REPAIR Soothing Cleansing Gel",
-          "ACTI-REPAIR Hydro Gel",
-          "ACTI-REPAIR Emollient Extreme",
+          // تصحيح الأرقام التعريفية (ID) لتطابق ملف Products.js
+          {
+            name: "ACTI-REPAIR CICA Cream",
+            collectionKey: "acti-repair",
+            id: 2,
+          },
+          {
+            name: "ACTI-REPAIR Soothing Cleansing Gel",
+            collectionKey: "acti-repair",
+            id: 1,
+          },
+          {
+            name: "ACTI-REPAIR Hydro Gel",
+            collectionKey: "acti-repair",
+            id: 4,
+          },
+          {
+            name: "ACTI-REPAIR Emollient Extreme",
+            collectionKey: "acti-repair",
+            id: 3,
+          },
         ],
       },
       {
         name: "Hair Loss",
         products: [
-          "TRICHO-ACT Anti-Hair loss Shampoo",
-          "TRICHO-ACT Anti-Dandruff Shampoo DS",
-          "TRICHO-ACT Hair Repairing Mask",
-          "TRICHO-ACT Anti-Hair Loss Lotion Concentrate",
+          {
+            name: "TRICHO-ACT Anti-Hair loss Shampoo",
+            collectionKey: "tricho-act",
+            id: 1,
+          },
+          {
+            name: "TRICHO-ACT Anti-Dandruff Shampoo DS",
+            collectionKey: "tricho-act",
+            id: 2,
+          },
+          {
+            name: "TRICHO-ACT Hair Repairing Mask",
+            collectionKey: "tricho-act",
+            id: 3,
+          },
+          {
+            name: "TRICHO-ACT Anti-Hair Loss Lotion Concentrate",
+            collectionKey: "tricho-act",
+            id: 4,
+          },
         ],
       },
     ],
@@ -117,48 +306,124 @@ const menuData = [
     sections: [
       {
         name: "Cleansers",
-        products: ["ACTI-CLEAR Gentle Cleansing Gel", "ACTI-WHITE Foaming Gel"],
+        products: [
+          {
+            name: "ACTI-CLEAR Gentle Cleansing Gel",
+            collectionKey: "acti-clear",
+            id: 1,
+          },
+          {
+            name: "ACTI-WHITE Foaming Gel",
+            collectionKey: "acti-white",
+            id: 1,
+          },
+        ],
       },
       {
         name: "Face Care",
         products: [
-          "ACTI-CLEAR Hydra-Mattifying Gel",
-          "ACTI-WHITE Depigmenting Cream",
-          "ACTI-WHITE Eye Contour",
+          {
+            name: "ACTI-CLEAR Hydra-Mattifying Gel",
+            collectionKey: "acti-clear",
+            id: 2,
+          },
+          {
+            name: "ACTI-WHITE Depigmenting Cream",
+            collectionKey: "acti-white",
+            id: 3,
+          },
+          {
+            name: "ACTI-WHITE Eye Contour",
+            collectionKey: "acti-white",
+            id: 4,
+          },
         ],
       },
       {
         name: "Sun Protection",
         products: [
-          "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
-          "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
-          "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
-          "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
-          "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
-          "ACTI-SOLAIRE SPF50+ KIDS",
+          {
+            name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
+            collectionKey: "acti-solaire",
+            id: 4,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
+            collectionKey: "acti-solaire",
+            id: 5,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
+            collectionKey: "acti-solaire",
+            id: 3,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
+            collectionKey: "acti-solaire",
+            id: 1,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
+            collectionKey: "acti-solaire",
+            id: 2,
+          },
+          {
+            name: "ACTI-SOLAIRE SPF50+ KIDS",
+            collectionKey: "acti-solaire",
+            id: 6,
+          },
         ],
       },
       {
         name: "Serums",
         products: [
-          " ACTI-CLEAR Correcting Serum",
-          "ACTI-WHITE Brightening Correcting Serum",
+          {
+            name: " ACTI-CLEAR Correcting Serum",
+            collectionKey: "acti-clear",
+            id: 3,
+          },
+          {
+            name: "ACTI-WHITE Brightening Correcting Serum",
+            collectionKey: "acti-white",
+            id: 2,
+          },
         ],
       },
-      { name: "Eye Care", products: [" ACTI-WHITE Eye Contour"] },
+      {
+        name: "Eye Care",
+        products: [
+          {
+            name: " ACTI-WHITE Eye Contour",
+            collectionKey: "acti-white",
+            id: 4,
+          },
+        ],
+      },
       {
         name: "Shampoo & Masks",
         products: [
-          "TRICHO-ACT Anti-Hair loss Shampoo",
-          "TRICHO-ACT Anti-Dandruff Shampoo DS",
-          "TRICHO-ACT Hair Repairing Mask",
+          {
+            name: "TRICHO-ACT Anti-Hair loss Shampoo",
+            collectionKey: "tricho-act",
+            id: 1,
+          },
+          {
+            name: "TRICHO-ACT Anti-Dandruff Shampoo DS",
+            collectionKey: "tricho-act",
+            id: 2,
+          },
+          {
+            name: "TRICHO-ACT Hair Repairing Mask",
+            collectionKey: "tricho-act",
+            id: 3,
+          },
         ],
       },
     ],
   },
   {
     title: "About Dermactive",
-    sections: [], // لا يوجد أقسام فرعية
+    sections: [],
   },
 ];
 
@@ -170,7 +435,6 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
 
   const toggleTab = (title) => {
     setActiveTab(activeTab === title ? null : title);
-    // setActiveSection(null); // إغلاق الأقسام الداخلية عند تغيير التبويب الرئيسي
   };
 
   const toggleSection = (name) => {
@@ -185,7 +449,7 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.3 }}
-          className="fixed top-0 left-2 w-full max-w-xs md:max-w-lg bg-white shadow-xl z-[999999999] lg:hidden" // يظهر على الأجهزة الصغيرة فقط
+          className="fixed top-0 left-2 w-full max-w-xs md:max-w-lg bg-white shadow-xl z-[999999999] lg:hidden"
         >
           {/* Header & Close Button */}
           <div className="p-4 flex justify-between items-center border-b border-gray-200 sticky top-0 bg-white">
@@ -195,11 +459,11 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
               onClick={() => SetShowMobileMenu(false)}
             />
           </div>
-          <div className="shadow-sm  relative">
+          <div className="shadow-sm relative">
             <input
               type="search"
               placeholder="Search For Products"
-              className="w-full pl-10 pr-4 py-6  focus:outline-none  focus:ring-[#777] text-center"
+              className="w-full pl-10 pr-4 py-6 focus:outline-none  focus:ring-[#777] text-center"
             />
             <HiOutlineSearch
               size={25}
@@ -211,25 +475,38 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
           <div className="p-4">
             {menuData.map((tab) => (
               <div key={tab.title} className="mb-2 border-b border-gray-100">
-                <div
-                  className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium ${
-                    activeTab === tab.title ? "text-[#222]" : "text-black"
-                  }`}
-                  onClick={() => toggleTab(tab.title)}
-                >
-                  {tab.title}
-                  {tab.sections.length > 0 && (
-                    <span className="ml-2 bg-[#222] text-white rounded-2xl  ">
+                {/* [!!!] رابط لـ About Dermactive إذا لم يكن به أقسام فرعية */}
+                {tab.sections.length === 0 ? (
+                  <Link
+                    href="/about-dermactive"
+                    onClick={() => SetShowMobileMenu(false)}
+                  >
+                    <div
+                      className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium text-black hover:text-[#777]`}
+                    >
+                      {tab.title}
+                    </div>
+                  </Link>
+                ) : (
+                  // القائمة الرئيسية القابلة للفتح (Accordion Header)
+                  <div
+                    className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium ${
+                      activeTab === tab.title ? "text-[#222]" : "text-black"
+                    }`}
+                    onClick={() => toggleTab(tab.title)}
+                  >
+                    {tab.title}
+                    <span className="ml-2 bg-[#222] text-white rounded-2xl  ">
                       {activeTab === tab.title ? (
                         <HiChevronUp size={20} />
                       ) : (
                         <HiChevronDown size={20} />
                       )}
                     </span>
-                  )}
-                </div>
+                  </div>
+                )}
 
-                {/* Sub-Sections (Hidden products list for 'About Dermactive') */}
+                {/* Sub-Sections */}
                 {tab.sections.length > 0 && activeTab === tab.title && (
                   <motion.div
                     initial={{ height: 0 }}
@@ -254,7 +531,7 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
                             </span>
                           </div>
 
-                          {/* Products List */}
+                          {/* Products List (باستخدام Link والبيانات المصححة) */}
                           {activeSection === section.name && (
                             <motion.ul
                               initial={{ opacity: 0, height: 0 }}
@@ -263,12 +540,20 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
                               className="pl-4 pt-2 text-sm text-gray-500"
                             >
                               {section.products.map((product) => (
-                                <li
-                                  key={product}
-                                  className="py-1 hover:text-black"
+                                <Link
+                                  // نستخدم المسار كما حددته في ملف HoverProduct.jsx:
+                                  // /componts/oneproduct/[collectionKey]/[id]
+                                  href={`/componts/oneproduct/${
+                                    product.collectionKey
+                                  }/${product.id.toString()}`}
+                                  // نستخدم اسم المنتج كمفتاح
+                                  key={product.name}
+                                  onClick={() => SetShowMobileMenu(false)} // إغلاق القائمة عند النقر
                                 >
-                                  {product}
-                                </li>
+                                  <li className="py-1 hover:text-black cursor-pointer">
+                                    {product.name}
+                                  </li>
+                                </Link>
                               ))}
                             </motion.ul>
                           )}

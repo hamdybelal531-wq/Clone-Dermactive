@@ -8,6 +8,7 @@ import HoverOurRange from "./navebarhover/ourRangeH";
 import HoverSkincon from "./navebarhover/skincon";
 import HoverProduct from "./navebarhover/proudcttypeh";
 import MobileMenu from "./navebarhover/sidbarmenu";
+import Link from "next/link";
 
 export default function Navibar() {
   const { scrollY } = useScroll();
@@ -40,13 +41,15 @@ export default function Navibar() {
         className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50  px-10"
       >
         <div className=" z-[99999] w-full flex justify-center lg:justify-between items-center transition-all relative p-2">
-          <Image
-            src="https://derm-active.com/wp-content/uploads/2023/01/Untitled-2-01.png"
-            alt="Logo"
-            width={150}
-            height={60}
-            className="h-auto w-auto"
-          />
+          <Link href={"/"}>
+            <Image
+              src="https://derm-active.com/wp-content/uploads/2023/01/Untitled-2-01.png"
+              alt="Logo"
+              width={150}
+              height={60}
+              className="h-auto w-auto"
+            />
+          </Link>
           <ul className="lg:flex gap-6 text-[14px] hidden relative">
             {[
               "Our Range",
@@ -54,36 +57,37 @@ export default function Navibar() {
               "Product Type",
               "About Dermactive",
             ].map((text, i) => (
-              <li
-                onMouseEnter={() => {
-                  if (text === "Our Range") {
-                    SetShow({
-                      ShowOurRange: true,
-                      ShowProduct: false,
-                      ShowSkin: false,
-                    });
-                  } else if (text === "Skin Concerns") {
-                    SetShow({
-                      ShowOurRange: false,
-                      ShowProduct: false,
-                      ShowSkin: true,
-                    });
-                  } else if (text === "Product Type") {
-                    SetShow({
-                      ShowOurRange: false,
-                      ShowSkin: false,
-                      ShowProduct: true,
-                    });
-                  }
-                }}
-                key={i}
-                className="flex cursor-pointer text-black whitespace-nowrap hover:text-[#777] "
-              >
-                {text}{" "}
-                <span className="mt-1">
-                  <HiChevronDown />
-                </span>
-              </li>
+              <Link key={i} href={"/aboutus"}>
+                <li
+                  onMouseEnter={() => {
+                    if (text === "Our Range") {
+                      SetShow({
+                        ShowOurRange: true,
+                        ShowProduct: false,
+                        ShowSkin: false,
+                      });
+                    } else if (text === "Skin Concerns") {
+                      SetShow({
+                        ShowOurRange: false,
+                        ShowProduct: false,
+                        ShowSkin: true,
+                      });
+                    } else if (text === "Product Type") {
+                      SetShow({
+                        ShowOurRange: false,
+                        ShowSkin: false,
+                        ShowProduct: true,
+                      });
+                    }
+                  }}
+                  className="flex cursor-pointer text-black whitespace-nowrap hover:text-[#777] "
+                >
+                  {text}{" "}
+                  <span className="mt-1">
+                    <HiChevronDown />
+                  </span>
+                </li>
+              </Link>
             ))}
           </ul>
           <div className="relative w-full max-w-sm lg:block hidden">

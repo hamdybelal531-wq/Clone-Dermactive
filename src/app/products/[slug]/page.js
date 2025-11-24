@@ -33,7 +33,7 @@ export default function ProductsPage({ params }) {
 
   return (
     <>
-      <div className="pt-20 ">
+      <div className="lg:pt-20 pt-15 ">
         <motion.div
           style={{ y }}
           initial={{ opacity: 0, scale: 0.95 }}
@@ -41,17 +41,17 @@ export default function ProductsPage({ params }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div
-            className={`relative w-full h-50 md:h-60 lg:h-100 overflow-hidden`}
+            className={`relative mt-4 lg:mt-0 w-full h-40 md:h-60 lg:h-100 overflow-hidden`}
           >
             <Image
               src={Product.img}
               fill
               alt={Product.title}
               sizes="(max-width: 768px) 100vw, 90vw"
-              className="object-cover"
+              className="sm:object-cover object-contain"
               loading="eager"
             />
-            <h1 className="absolute top-15 left-15 sm:top-20 sm:left-20 text-4xl lg:top-40 lg:left-60 lg:text-7xl font-bold text-white ">
+            <h1 className="absolute top-15 left-10 md:top-22 md:text-5xl  sm:top-16 sm:left-20 sm:text-4xl text-3xl lg:top-40 lg:left-40 lg:text-7xl font-bold text-white ">
               {Product.title.toUpperCase()}
             </h1>
           </div>
@@ -74,7 +74,7 @@ export default function ProductsPage({ params }) {
                       SetShow(item.id);
                     }
                   }}
-                  className={` relative p-10 lg:p-15 xl:p-10 m-5  ${
+                  className={` relative p-10 lg:p-15 xl:p-10   ${
                     Show === item.id ? "shadow-2xl" : ""
                   } w-full  lg:w-[300px] `}
                 >

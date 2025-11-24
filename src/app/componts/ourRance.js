@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Link from "next/link";
 
 const calculateDuration = () => {
   if (typeof window !== "undefined") {
@@ -58,38 +59,24 @@ export default function OurRance() {
   const Boxs = [
     {
       Name: "TRICHO ACT",
+      colectionLink: "tricho-act",
       url: "https://derm-active.com/wp-content/uploads/2023/06/864x600-Tricho-Act.jpg",
     },
     {
       Name: "SWEAT CONTROL",
+      colectionLink: "sweat-control",
       url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Sweat-Control.jpg",
     },
     {
-      Name: "DERMA ACTIVE BABY",
-      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Baby.jpg",
-    },
-    {
       Name: "ACTI-WHITE",
+      colectionLink: "acti-white",
       url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
     },
     {
-      Name: "TRICHO ACT",
-      url: "https://derm-active.com/wp-content/uploads/2023/06/864x600-Tricho-Act.jpg",
+      Name: "ACTI-REPAIR",
+      colectionLink: "acti-repair",
+      url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Repair.jpg",
     },
-    {
-      Name: "SWEAT CONTROL",
-      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Sweat-Control.jpg",
-    },
-    {
-      Name: "DERMA ACTIVE BABY",
-      url: "https://derm-active.com/wp-content/uploads/2024/08/864x600-Baby.jpg",
-    },
-    {
-      Name: "ACTI-WHITE",
-      url: "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
-    },
-
-    // ... باقي العناصر
   ];
 
   const carouselItemSizes =
@@ -118,25 +105,24 @@ export default function OurRance() {
         itemClass=""
       >
         {Boxs.map((obj, i) => (
-          <div
-            key={i}
-            className="relative w-full h-35 sm:h-60 md:h-60 group  cursor-pointer"
-          >
-            <Image
-              sizes={carouselItemSizes}
-              src={obj.url}
-              alt={obj.Name}
-              fill
-              priority
-              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 p-[8px]"
-            />
+          <Link key={i} href={`/products/${obj.colectionLink}`}>
+            <div className="relative w-full h-35 sm:h-60 md:h-60 group  cursor-pointer">
+              <Image
+                sizes={carouselItemSizes}
+                src={obj.url}
+                alt={obj.Name}
+                fill
+                priority
+                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 p-[8px]"
+              />
 
-            <div className="absolute inset-0 -bottom-[38px] sm:-bottom-[37px] md:-bottom-[42px] flex items-end justify-end p-5 text-right">
-              <h1 className="text-[#777] text-[14px]  sm:text-[18px] text-left whitespace-nowrap transition duration-300 border-b-2 border-gray-400">
-                {obj.Name}
-              </h1>
+              <div className="absolute inset-0 -bottom-[38px] sm:-bottom-[37px] md:-bottom-[42px] flex items-end justify-end p-5 text-right">
+                <h1 className="text-[#777] text-[14px]  sm:text-[18px] text-left whitespace-nowrap transition duration-300 border-b-2 border-gray-400">
+                  {obj.Name}
+                </h1>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </Carousel>
     </>

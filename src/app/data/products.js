@@ -88,6 +88,15 @@ const Products = {
         prag: "Eye Contour gel, Suitable for sensitive skin, this very fresh gel-cream works to brighten dull skin that has lost its radiance.",
         size: "15 ML",
       },
+      {
+        name: "2in1 Body Milk",
+        id: 5,
+        img: "https://derm-active.com/wp-content/uploads/2023/06/ACTI-White-2in1-Body-Milk.jpg",
+        imgHover:
+          "https://derm-active.com/wp-content/uploads/2023/06/1000x1440-8-1-150x216.jpg",
+        prag: "Special 2 in 1 Body Milk, designed to Soften, Unified and brightened the skin tone of sensitive and intimate areas as Bikini line and Armpits. Helps to reduce the appearance of dark spots in areas of friction. Leaves the skin soft and comfortable , Non-sticky, non-greasy texture – Unfragranced – safe to be used on sensitive areas",
+        size: "200 ML",
+      },
     ],
   },
 
@@ -231,6 +240,37 @@ const Products = {
           "https://derm-active.com/wp-content/uploads/2023/06/1000x1440-5-1-711x1024.jpg",
         prag: "Hair loss lotion concentrate acts deep in the hair bulb to control hair loss and promote growth of stronger, denser, healthier hair. Lightweight formula suitable for daily use on all scalp types including sensitive scalps.",
         size: "120 ML",
+      },
+    ],
+  },
+  "sweat-control": {
+    id: uuidv4(),
+    title: "Sweat Control",
+    img: "/black_header.png",
+    items: [
+      {
+        id: 1,
+        name: "control intense",
+        img: "https://derm-active.com/wp-content/uploads/2024/08/INTENSE-711x1024.png",
+        imgHover: "",
+        prag: "Dermactive Sweat Control INTENSE Anti-Perspirant Deodorant Roll-On is an antiperspirant that protects against sweating up to 48h , helps control excess underarm odor thanks to its intense formula that regulates perspiration, helps reduce the bacteria responsible for odors",
+        size: "50 ML",
+      },
+      {
+        id: 2,
+        name: "control refreshing",
+        img: "https://derm-active.com/wp-content/uploads/2024/08/REFRESHING-711x1024.png",
+        imgHover: "",
+        prag: "Dermactive Sweat Control REFRESHING Deodorant Roll-On refreshes and protects the underarm area for up to 48 h, helps regulate normal to excessive perspiration",
+        size: "50 ML",
+      },
+      {
+        id: 3,
+        name: "control triple effect",
+        img: "https://derm-active.com/wp-content/uploads/2024/08/TRIPPLE-EFFECT.png",
+        imgHover: "",
+        prag: "Dermactive Sweat Control TRIPLE EFFECT Deodorant Roll-On offers complete Care for underarm area. It regulates perspiration up to 48 h, helps reduce the bacteria responsible for odors. Helps prevent bad body odors.",
+        size: "50 ML",
       },
     ],
   },

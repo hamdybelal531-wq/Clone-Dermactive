@@ -48,7 +48,6 @@ const rangesData = [
       },
       { name: "ACTI-WHITE Eye Contour", collectionKey: "acti-white", id: 4 }, // صحيح
       // ⚠️ ملاحظة: منتج "ACTI-WHITE 2in1 Body Milk" غير موجود في كائن Products الأصلي.
-      // تم تركه مع ID 5 كما افترضت سابقًا لضمان عدم حدوث خطأ في الكود.
       { name: "ACTI-WHITE 2in1 Body Milk", collectionKey: "acti-white", id: 5 },
     ],
     imageSrc:
@@ -153,15 +152,17 @@ export default function HoverSkincon({ Show, SetShow }) {
         key={range.name}
         className="hover:text-[#777] cursor-pointer relative text-[20px] whitespace-nowrap"
       >
-        <span
-          style={{
-            color: nameSkin === range.name ? "#777" : "black",
-          }}
-          onMouseEnter={() => setNameSkin(range.name)}
-          className="hover:text-[#777]"
-        >
-          {range.name}
-        </span>
+        <Link href={`/products/${range.products[0].collectionKey}`}>
+          <span
+            style={{
+              color: nameSkin === range.name ? "#777" : "black",
+            }}
+            onMouseEnter={() => setNameSkin(range.name)}
+            className="hover:text-[#777]"
+          >
+            {range.name}
+          </span>
+        </Link>
         {/* القائمة الفرعية والصورة */}
         <ul
           className="p-10 flex-col gap-5 absolute top-full min-w-[700px] text-[#777]"
