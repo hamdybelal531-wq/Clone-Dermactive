@@ -425,12 +425,14 @@ const menuData = [
     title: "About Dermactive",
     sections: [],
   },
+  {
+    title: "Contact Us",
+    sections: [],
+  },
 ];
 
 export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
-  // للتحكم في فتح وغلق القوائم الرئيسية (Our Range, Skin Concerns, Product Type)
   const [activeTab, setActiveTab] = useState(null);
-  // للتحكم في فتح وغلق الأقسام الداخلية (Acti Clear, Oily Skin, etc.)
   const [activeSection, setActiveSection] = useState(null);
 
   const toggleTab = (title) => {
@@ -445,10 +447,10 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
     <AnimatePresence>
       {ShowMobileMenu && (
         <motion.div
-          initial={{ y: "-100%" }}
-          animate={{ y: 0 }}
-          exit={{ y: "-100%" }}
-          transition={{ duration: 0.3 }}
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
+          transition={{ duration: 0.2 }}
           className="fixed top-0 left-2 w-full max-w-xs md:max-w-lg bg-white shadow-xl z-[999999999] lg:hidden overflow-y-auto h-screen"
         >
           {/* Header & Close Button */}
@@ -480,6 +482,14 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
                   <Link href="#" onClick={() => SetShowMobileMenu(false)}>
                     {tab.title === "About Dermactive" ? (
                       <Link href={`/aboutus`}>
+                        <div
+                          className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium text-black hover:text-[#777]`}
+                        >
+                          {tab.title}
+                        </div>
+                      </Link>
+                    ) : tab.title === "Contact Us" ? (
+                      <Link href={`/contactus`}>
                         <div
                           className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium text-black hover:text-[#777]`}
                         >

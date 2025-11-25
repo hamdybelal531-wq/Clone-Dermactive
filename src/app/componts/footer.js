@@ -33,9 +33,9 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-white">
-                Contact us
-              </a>
+              <Link href={"/contactus"}>
+                <span className="hover:text-white">Contact us</span>
+              </Link>
             </li>
             <li>
               <a href="#" className="hover:text-white">

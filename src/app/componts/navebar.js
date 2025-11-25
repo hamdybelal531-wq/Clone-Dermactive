@@ -9,6 +9,7 @@ import HoverSkincon from "./navebarhover/skincon";
 import HoverProduct from "./navebarhover/proudcttypeh";
 import MobileMenu from "./navebarhover/sidbarmenu";
 import Link from "next/link";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export default function Navibar() {
   const { scrollY } = useScroll();
@@ -19,6 +20,17 @@ export default function Navibar() {
     ShowSkin: false,
     ShowProduct: false,
   });
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const items = [
+    { id: 1, text: "Contact Us", collectionLink: "contactus" },
+    { id: 2, text: "Our Blogs", collectionLink: "ourblogs" },
+  ];
   // mobile menu sidbar
   const [ShowMobileMenu, SetShowMobileMenu] = useState(false);
   // mobile menu sidbar
@@ -45,12 +57,12 @@ export default function Navibar() {
             <Image
               src="https://derm-active.com/wp-content/uploads/2023/01/Untitled-2-01.png"
               alt="Logo"
-              width={150}
+              width={140}
               height={60}
               className="h-auto w-auto"
             />
           </Link>
-          <ul className="lg:flex gap-6 text-[14px] hidden relative">
+          <ul className="lg:flex gap-6 text-[14px] hidden relative mx-2">
             {[
               "Our Range",
               "Skin Concerns",
@@ -89,6 +101,35 @@ export default function Navibar() {
                 </li>
               </Link>
             ))}
+            {/* More Links */}
+            <div
+              onClick={toggleAccordion}
+              className="flex relative justify-between items-center cursor-pointer  transition duration-200"
+            >
+              <h3 className="text-lg text-[14px] text-black hover:text-[#777] ">
+                More
+              </h3>
+
+              <div className="text-gray-600">
+                {isOpen ? <FaChevronUp size={6} /> : <FaChevronDown size={6} />}
+              </div>
+
+              <div
+                className={`transition-all duration-300 ease-in-out ${
+                  isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                } overflow-hidden`}
+              >
+                <ul className="absolute top-full -left-3">
+                  {items.map((item) => (
+                    <Link href={`/${item.collectionLink}`} key={item.id}>
+                      <li className="p-3 bg-white text-black text-[14px] rounded-2xl mt-2 whitespace-nowrap hover:text-[#777]">
+                        {item.text}
+                      </li>
+                    </Link>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </ul>
           <div className="relative w-full max-w-sm lg:block hidden">
             <input

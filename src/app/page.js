@@ -5,6 +5,7 @@ import OurBlog from "./componts/ourblog";
 import Readmore from "./componts/redmore";
 import NewsletterSection from "./componts/followus";
 import Header from "./componts/header";
+import ContactForm from "./contactus/page";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <OurBlog />
       <Readmore />
       <NewsletterSection />
+      <ContactForm />
     </>
   );
 }

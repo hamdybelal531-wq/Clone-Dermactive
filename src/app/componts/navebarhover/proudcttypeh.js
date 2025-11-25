@@ -192,7 +192,7 @@ export default function HoverProduct({ Show, SetShow }) {
       {Show.ShowProduct && (
         <div
           onMouseLeave={() => SetShow({ ...Show, ShowProduct: false })}
-          className="absolute top-20 left-0 w-full h-140 bg-white pb-10 flex"
+          className="absolute lg:top-15 xl:top-20 left-0 w-full h-140 bg-white pb-10 flex"
         >
           <div>
             <ul className="p-10 flex flex-col gap-5">
