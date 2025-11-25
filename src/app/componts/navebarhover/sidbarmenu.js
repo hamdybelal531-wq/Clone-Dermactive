@@ -451,7 +451,7 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
           animate={{ x: 0 }}
           exit={{ x: "-100%" }}
           transition={{ duration: 0.2 }}
-          className="fixed top-0 left-2 w-full max-w-xs md:max-w-lg bg-white shadow-xl z-[999999999] lg:hidden overflow-y-auto h-screen"
+          className="fixed top-0 left-0 w-full max-w-xs md:max-w-lg bg-white shadow-xl z-[999999999] lg:hidden overflow-y-auto h-screen"
         >
           {/* Header & Close Button */}
           <div className="p-4 flex justify-between items-center border-b border-gray-200 sticky top-0 bg-white">
