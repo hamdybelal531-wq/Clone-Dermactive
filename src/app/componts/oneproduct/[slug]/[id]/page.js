@@ -9,8 +9,13 @@ import { HiOutlineSearch } from "react-icons/hi";
 import Products from "@/app/data/products";
 import React from "react";
 import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
+import { useCart } from "@/app/componts/basketcart/CartContext";
+import { toast } from "sonner";
 
 export default function OneProduct({ params }) {
+  const { state, dispatch } = useCart();
+
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef(null);
 
@@ -31,6 +36,10 @@ export default function OneProduct({ params }) {
     ingredients: false,
     howToUse: false,
   });
+  // Add Item in Basjet
+  function AddToCart(product) {
+    dispatch({ type: "ADD_ITEM", payload: product });
+  }
 
   useEffect(() => {
     window.addEventListener("resize", updateDuration);
@@ -40,10 +49,8 @@ export default function OneProduct({ params }) {
   const { slug, id } = React.use(params);
   const productIdNumber = Number(id);
   const groupItems = Products[slug];
-  console.log(slug, id);
 
   if (!groupItems) {
-    console.log("group");
     return (
       <div className="flex items-center justify-center min-h-screen text-center bg-gray-50">
         <h1 className="text-3xl text-red-500 p-20 rounded-lg shadow-lg">
@@ -58,8 +65,6 @@ export default function OneProduct({ params }) {
   });
 
   if (!product) {
-    console.log("product");
-
     return (
       <div className="flex items-center justify-center min-h-screen text-center bg-gray-50">
         <h1 className="text-3xl text-red-500 p-20 rounded-lg shadow-lg">
@@ -295,13 +300,35 @@ export default function OneProduct({ params }) {
           <p className="text-[#777] text-[17px] my-3">{product.prag}</p>
           <span className="block">{product.size}</span>
           <Button
+            onClick={() => {
+              const Cheaked = state.items.filter((item) => {
+                return item.name === product.name;
+              });
+              if (Cheaked > -1) {
+                AddToCart({
+                  name: product.name,
+                  price: 279,
+                  img: product.img,
+                  id: uuidv4(),
+                  quantity: 1,
+                });
+                toast.success("Succefull Add");
+              } else {
+                toast.error("It is Already Added", {
+                  style: {
+                    background: "#f87171",
+                    fontWeight: "bold", // اللون الأحمر Tailwind red-400
+                  },
+                });
+              }
+            }}
             className={
               "bg-black text-white w-25 my-5 h-10 font-bold block cursor-pointer"
             }
             variant="outline"
             size="icon"
           >
-            Buy Online!
+            Add To Cart
           </Button>
           <span className="text-[#777] text-[20px]">279.00EGP</span>
         </div>

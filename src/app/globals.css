@@ -161,3 +161,36 @@
 .react-multi-carousel-list .react-multiple-carousel__arrow {
   z-index: 1 !important;
 }
+
+@keyframes basketShake {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-8deg);
+  }
+  25% {
+    transform: rotate(8deg);
+  }
+  40% {
+    transform: rotate(-6deg);
+  }
+  55% {
+    transform: rotate(6deg);
+  }
+  70% {
+    transform: rotate(-2deg);
+  }
+  85% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* الكلاس الذي سنطبقه على الزر */
+.animate-shake-loop {
+  animation: basketShake 1.2s ease-in-out infinite;
+  transform-origin: center center; /* لضمان الدوران حول المركز */
+}

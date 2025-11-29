@@ -4,6 +4,10 @@ import "./globals.css";
 import Navibar from "./componts/navebar";
 import Footer from "./componts/footer";
 import ScrollToTopButton from "./scrolltotop";
+import { Toaster } from "@/components/ui/sonner";
+import ToggleCartButton from "./componts/basketcart/ToggleCartButton";
+import { CartProvider } from "./componts/basketcart/CartContext";
+import CartSidebar from "./componts/basketcart/CartSidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,10 +31,15 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* <ThemeProviderAll> */}
-        <Navibar />
-        {children}
-        <ScrollToTopButton />
-        <Footer />
+        <CartProvider>
+          <Navibar />
+          {children}
+          <CartSidebar />
+          <ToggleCartButton />
+          <ScrollToTopButton />
+          <Footer />
+          <Toaster />
+        </CartProvider>
         {/* </ThemeProviderAll> */}
       </body>
     </html>

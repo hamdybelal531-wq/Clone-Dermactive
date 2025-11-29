@@ -44,6 +44,15 @@ const Products = {
         size: "50 ML",
       },
     ],
+    name: "Acti-Clear",
+    products: [
+      "ACTI-CLEAR Gentle Cleansing Gel",
+      "ACTI-CLEAR Hydra-Mattifying Gel",
+      "ACTI-CLEAR Correcting Serum",
+      "ACTI-CLEAR Global AC Cream",
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Clear.jpg",
   },
 
   //  Next Collection
@@ -98,6 +107,16 @@ const Products = {
         size: "200 ML",
       },
     ],
+    name: "Acti-White",
+    products: [
+      "ACTI-WHITE Foaming Gel",
+      "ACTI-WHITE Brightening Correcting Serum",
+      "ACTI-WHITE Depigmenting Cream",
+      "ACTI-WHITE Eye Contour",
+      "ACTI-WHITE 2in1 Body Milk",
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
   },
 
   // Next Collection
@@ -159,6 +178,15 @@ const Products = {
         prag: "Water and sweat resistant, photostable, provides reliable sun protection. Light non-oily formula absorbs quickly and leaves skin hydrated, suitable for children and babies from 3 years old.",
       },
     ],
+    name: "Acti-Solaire",
+    products: [
+      "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
+      "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
+      "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
+      "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/05/864x600-Acti-Solaire-1.jpg",
   },
 
   "acti-repair": {
@@ -198,6 +226,15 @@ const Products = {
         prag: "Hydro-gel gives instant intense hydration with non-sticky texture suitable for summer and winter. Skin feels nourished, supple and soothed.",
       },
     ],
+    name: "Acti-Repair",
+    products: [
+      "ACTI-REPAIR Soothing Cleansing Gel",
+      "ACTI-REPAIR CICA Cream",
+      "ACTI-REPAIR Emollient Extreme",
+      "ACTI-REPAIR Hydro Gel",
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Repair.jpg",
   },
 
   "tricho-act": {
@@ -242,6 +279,15 @@ const Products = {
         size: "120 ML",
       },
     ],
+    name: "Tricho-Act",
+    products: [
+      "TRICHO-ACT Anti-Hair loss Shampoo",
+      "TRICHO-ACT Anti-Dandruff Shampoo DS",
+      "TRICHO-ACT Hair Repairing Mask",
+      "TRICHO-ACT Anti-Hair Loss Lotion Concentrate",
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/02/Ranges-4.2-1.jpg",
   },
   "sweat-control": {
     id: uuidv4(),
@@ -274,5 +320,274 @@ const Products = {
       },
     ],
   },
+};
+
+export const rangesData = [
+  {
+    name: "Cleansers",
+    products: [
+      {
+        name: "ACTI-CLEAR Gentle Cleansing Gel",
+        collectionKey: "acti-clear",
+        id: 1,
+      },
+      { name: "ACTI-WHITE Foaming Gel", collectionKey: "acti-white", id: 1 },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-9.jpg",
+  },
+  {
+    name: "Face Care",
+    products: [
+      {
+        name: "ACTI-CLEAR Hydra-Mattifying Gel",
+        collectionKey: "acti-clear",
+        id: 2,
+      },
+      {
+        name: "ACTI-WHITE Depigmenting Cream",
+        collectionKey: "acti-white",
+        id: 3,
+      },
+      { name: "ACTI-WHITE Eye Contour", collectionKey: "acti-white", id: 4 },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-3.jpg",
+  },
+  {
+    name: "Sun Protection",
+    products: [
+      {
+        name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
+        collectionKey: "acti-solaire",
+        id: 4,
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
+        collectionKey: "acti-solaire",
+        id: 5,
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
+        collectionKey: "acti-solaire",
+        id: 3,
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
+        collectionKey: "acti-solaire",
+        id: 1,
+      }, // تم الربط بالـ ID 1
+      {
+        name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
+        collectionKey: "acti-solaire",
+        id: 2,
+      },
+      {
+        name: "ACTI-SOLAIRE SPF50+ KIDS",
+        collectionKey: "acti-solaire",
+        id: 6,
+      },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/05/864x600-Acti-Solaire.jpg",
+  },
+  {
+    name: "Serums",
+    products: [
+      {
+        name: " ACTI-CLEAR Correcting Serum",
+        collectionKey: "acti-clear",
+        id: 3,
+      },
+      {
+        name: "ACTI-WHITE Brightening Correcting Serum",
+        collectionKey: "acti-white",
+        id: 2,
+      },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-4.jpg",
+  },
+  {
+    name: "Eye Care",
+    products: [
+      { name: " ACTI-WHITE Eye Contour", collectionKey: "acti-white", id: 4 },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/02/864x600-7.jpg",
+  },
+  {
+    name: "Shampoo & Masks",
+    products: [
+      {
+        name: "TRICHO-ACT Anti-Hair loss Shampoo",
+        collectionKey: "tricho-act",
+        id: 1,
+      },
+      {
+        name: "TRICHO-ACT Anti-Dandruff Shampoo DS",
+        collectionKey: "tricho-act",
+        id: 2,
+      },
+      {
+        name: "TRICHO-ACT Hair Repairing Mask",
+        collectionKey: "tricho-act",
+        id: 3,
+      },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-5.jpg",
+  },
+];
+
+export const rangesDataSkin = [
+  {
+    name: "Oily & Acne - prone skin",
+    products: [
+      {
+        name: "ACTI-CLEAR Gentle Cleansing Gel",
+        collectionKey: "acti-clear",
+        id: 1, // صحيح
+      },
+      {
+        name: "ACTI-CLEAR Hydra-Mattifying Gel",
+        collectionKey: "acti-clear",
+        id: 2, // صحيح
+      },
+      {
+        name: "ACTI-CLEAR Correcting Serum",
+        collectionKey: "acti-clear",
+        id: 3, // صحيح
+      },
+      {
+        name: "ACTI-CLEAR Global AC Cream",
+        collectionKey: "acti-clear",
+        id: 4, // صحيح
+      },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Clear.jpg",
+  },
+  {
+    name: "Un-Even & Pigmented Skin",
+    products: [
+      { name: "ACTI-WHITE Foaming Gel", collectionKey: "acti-white", id: 1 }, // صحيح
+      {
+        name: "ACTI-WHITE Brightening Correcting Serum",
+        collectionKey: "acti-white",
+        id: 2, // صحيح
+      },
+      {
+        name: "ACTI-WHITE Depigmenting Cream",
+        collectionKey: "acti-white",
+        id: 3, // صحيح
+      },
+      { name: "ACTI-WHITE Eye Contour", collectionKey: "acti-white", id: 4 }, // صحيح
+      // ⚠️ ملاحظة: منتج "ACTI-WHITE 2in1 Body Milk" غير موجود في كائن Products الأصلي.
+      { name: "ACTI-WHITE 2in1 Body Milk", collectionKey: "acti-white", id: 5 },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-2.jpg",
+  },
+  {
+    name: "Sun Exposure",
+    products: [
+      {
+        name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
+        collectionKey: "acti-solaire",
+        id: 4, // صحيح
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
+        collectionKey: "acti-solaire",
+        id: 5, // صحيح
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
+        collectionKey: "acti-solaire",
+        id: 3, // صحيح
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
+        collectionKey: "acti-solaire",
+        id: 1, // صحيح (يطابق SPF 50 MELTING CREAM Light Tinted)
+      },
+      {
+        name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
+        collectionKey: "acti-solaire",
+        id: 2, // صحيح
+      },
+      {
+        name: "ACTI-SOLAIRE SPF50+ KIDS",
+        collectionKey: "acti-solaire",
+        id: 6, // صحيح
+      },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/05/New-Project-40.jpg",
+  },
+  {
+    name: "Irritated & Damaged Skin",
+    products: [
+      // ⚠️ تم تعديل الـ IDs هنا لتطابق كائن Products: Soothing Cleansing Gel هو ID 1، و CICA Cream هو ID 2.
+      {
+        name: "ACTI-REPAIR CICA Cream",
+        collectionKey: "acti-repair",
+        id: 2,
+      },
+      {
+        name: "ACTI-REPAIR Soothing Cleansing Gel",
+        collectionKey: "acti-repair",
+        id: 1,
+      },
+      { name: "ACTI-REPAIR Hydro Gel", collectionKey: "acti-repair", id: 4 }, // تم تصحيح: كان 3، أصبح 4
+      {
+        name: "ACTI-REPAIR Emollient Extreme",
+        collectionKey: "acti-repair",
+        id: 3, // تم تصحيح: كان 4، أصبح 3
+      },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-8.jpg",
+  },
+  {
+    name: "Hair Loss",
+    products: [
+      {
+        name: "TRICHO-ACT Anti-Hair loss Shampoo",
+        collectionKey: "tricho-act",
+        id: 1, // صحيح
+      },
+      {
+        name: "TRICHO-ACT Anti-Dandruff Shampoo DS",
+        collectionKey: "tricho-act",
+        id: 2, // صحيح
+      },
+      {
+        name: "TRICHO-ACT Hair Repairing Mask",
+        collectionKey: "tricho-act",
+        id: 3, // صحيح
+      },
+      {
+        name: "TRICHO-ACT Anti-Hair Loss Lotion Concentrate",
+        collectionKey: "tricho-act",
+        id: 4, // صحيح
+      },
+    ],
+    imageSrc:
+      "https://derm-active.com/wp-content/uploads/2023/01/864x600-6.jpg",
+  },
+];
+export const getRangesData = () => {
+  return Object.keys(Products)
+    .filter((key) => key !== "sweat-control")
+    .map((key) => {
+      const collection = Products[key];
+      return {
+        name: collection.name,
+        products: collection.products,
+        imageSrc: collection.imageSrc,
+      };
+    });
 };
 export default Products;

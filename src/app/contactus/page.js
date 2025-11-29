@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
+import { toast } from "sonner";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Done");
+    toast.success("Event has been created.");
   };
 
   return (

@@ -1,153 +1,16 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import { rangesDataSkin } from "@/app/data/products";
 
 // بيانات المجموعات (Ranges Data)
 //
-const rangesData = [
-  {
-    name: "Oily & Acne - prone skin",
-    products: [
-      {
-        name: "ACTI-CLEAR Gentle Cleansing Gel",
-        collectionKey: "acti-clear",
-        id: 1, // صحيح
-      },
-      {
-        name: "ACTI-CLEAR Hydra-Mattifying Gel",
-        collectionKey: "acti-clear",
-        id: 2, // صحيح
-      },
-      {
-        name: "ACTI-CLEAR Correcting Serum",
-        collectionKey: "acti-clear",
-        id: 3, // صحيح
-      },
-      {
-        name: "ACTI-CLEAR Global AC Cream",
-        collectionKey: "acti-clear",
-        id: 4, // صحيح
-      },
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Clear.jpg",
-  },
-  {
-    name: "Un-Even & Pigmented Skin",
-    products: [
-      { name: "ACTI-WHITE Foaming Gel", collectionKey: "acti-white", id: 1 }, // صحيح
-      {
-        name: "ACTI-WHITE Brightening Correcting Serum",
-        collectionKey: "acti-white",
-        id: 2, // صحيح
-      },
-      {
-        name: "ACTI-WHITE Depigmenting Cream",
-        collectionKey: "acti-white",
-        id: 3, // صحيح
-      },
-      { name: "ACTI-WHITE Eye Contour", collectionKey: "acti-white", id: 4 }, // صحيح
-      // ⚠️ ملاحظة: منتج "ACTI-WHITE 2in1 Body Milk" غير موجود في كائن Products الأصلي.
-      { name: "ACTI-WHITE 2in1 Body Milk", collectionKey: "acti-white", id: 5 },
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/01/864x600-2.jpg",
-  },
-  {
-    name: "Sun Exposure",
-    products: [
-      {
-        name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
-        collectionKey: "acti-solaire",
-        id: 4, // صحيح
-      },
-      {
-        name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
-        collectionKey: "acti-solaire",
-        id: 5, // صحيح
-      },
-      {
-        name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
-        collectionKey: "acti-solaire",
-        id: 3, // صحيح
-      },
-      {
-        name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
-        collectionKey: "acti-solaire",
-        id: 1, // صحيح (يطابق SPF 50 MELTING CREAM Light Tinted)
-      },
-      {
-        name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
-        collectionKey: "acti-solaire",
-        id: 2, // صحيح
-      },
-      {
-        name: "ACTI-SOLAIRE SPF50+ KIDS",
-        collectionKey: "acti-solaire",
-        id: 6, // صحيح
-      },
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/05/New-Project-40.jpg",
-  },
-  {
-    name: "Irritated & Damaged Skin",
-    products: [
-      // ⚠️ تم تعديل الـ IDs هنا لتطابق كائن Products: Soothing Cleansing Gel هو ID 1، و CICA Cream هو ID 2.
-      {
-        name: "ACTI-REPAIR CICA Cream",
-        collectionKey: "acti-repair",
-        id: 2,
-      },
-      {
-        name: "ACTI-REPAIR Soothing Cleansing Gel",
-        collectionKey: "acti-repair",
-        id: 1,
-      },
-      { name: "ACTI-REPAIR Hydro Gel", collectionKey: "acti-repair", id: 4 }, // تم تصحيح: كان 3، أصبح 4
-      {
-        name: "ACTI-REPAIR Emollient Extreme",
-        collectionKey: "acti-repair",
-        id: 3, // تم تصحيح: كان 4، أصبح 3
-      },
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/01/864x600-8.jpg",
-  },
-  {
-    name: "Hair Loss",
-    products: [
-      {
-        name: "TRICHO-ACT Anti-Hair loss Shampoo",
-        collectionKey: "tricho-act",
-        id: 1, // صحيح
-      },
-      {
-        name: "TRICHO-ACT Anti-Dandruff Shampoo DS",
-        collectionKey: "tricho-act",
-        id: 2, // صحيح
-      },
-      {
-        name: "TRICHO-ACT Hair Repairing Mask",
-        collectionKey: "tricho-act",
-        id: 3, // صحيح
-      },
-      {
-        name: "TRICHO-ACT Anti-Hair Loss Lotion Concentrate",
-        collectionKey: "tricho-act",
-        id: 4, // صحيح
-      },
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/01/864x600-6.jpg",
-  },
-];
 
 export default function HoverSkincon({ Show, SetShow }) {
-  const [nameSkin, setNameSkin] = useState(rangesData[0].name);
+  const [nameSkin, setNameSkin] = useState(rangesDataSkin[0].name);
 
   const renderRangeItems = () => {
-    return rangesData.map((range) => (
+    return rangesDataSkin.map((range) => (
       <li
         key={range.name}
         className="hover:text-[#777] cursor-pointer relative text-[20px] whitespace-nowrap"

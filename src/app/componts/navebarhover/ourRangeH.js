@@ -1,67 +1,9 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import { getRangesData } from "@/app/data/products";
 
-// بيانات المجموعات (Ranges Data)
-const rangesData = [
-  {
-    name: "Acti-Clear",
-    products: [
-      "ACTI-CLEAR Gentle Cleansing Gel",
-      "ACTI-CLEAR Hydra-Mattifying Gel",
-      "ACTI-CLEAR Correcting Serum",
-      "ACTI-CLEAR Global AC Cream",
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Clear.jpg",
-  },
-  {
-    name: "Acti-White",
-    products: [
-      "ACTI-WHITE Foaming Gel",
-      "ACTI-WHITE Brightening Correcting Serum",
-      "ACTI-WHITE Depigmenting Cream",
-      "ACTI-WHITE Eye Contour",
-      "ACTI-WHITE 2in1 Body Milk",
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-White.jpg",
-  },
-  {
-    name: "Acti-Solaire",
-    products: [
-      "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
-      "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
-      "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
-      "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/05/864x600-Acti-Solaire-1.jpg",
-  },
-  {
-    name: "Acti-Repair",
-    products: [
-      "ACTI-REPAIR Soothing Cleansing Gel",
-      "ACTI-REPAIR CICA Cream",
-      "ACTI-REPAIR Emollient Extreme",
-      "ACTI-REPAIR Hydro Gel",
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/01/864x600-Acti-Repair.jpg",
-  },
-  {
-    name: "Tricho-Act",
-    products: [
-      "TRICHO-ACT Anti-Hair loss Shampoo",
-      "TRICHO-ACT Anti-Dandruff Shampoo DS",
-      "TRICHO-ACT Hair Repairing Mask",
-      "TRICHO-ACT Anti-Hair Loss Lotion Concentrate",
-    ],
-    imageSrc:
-      "https://derm-active.com/wp-content/uploads/2023/02/Ranges-4.2-1.jpg",
-  },
-];
-
+const rangesData = getRangesData();
 export default function HoverOurRange({ Show, SetShow }) {
   const [nameAction, setNameAction] = useState(rangesData[0].name);
 
