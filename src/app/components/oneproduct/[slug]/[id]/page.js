@@ -6,11 +6,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
-import Products from "@/app/data/products";
+import Products from "@/app/components/data/products";
 import React from "react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
-import { useCart } from "@/app/componts/basketcart/CartContext";
+import { useCart } from "@/app/components/basketcart/CartContext";
 import { toast } from "sonner";
 
 export default function OneProduct({ params }) {
@@ -357,7 +357,7 @@ export default function OneProduct({ params }) {
               return (
                 <Link
                   key={item.id}
-                  href={`/componts/oneproduct/${slug.toLowerCase()}/${item.id.toString()}`}
+                  href={`/components/oneproduct/${slug.toLowerCase()}/${item.id.toString()}`}
                 >
                   <div className="group w-full overflow-hidden transition-all duration-300 md:mt-20  flex flex-col cursor-pointer relative">
                     <div className="relative w-full sm:h-70 h-100 overflow-hidden">

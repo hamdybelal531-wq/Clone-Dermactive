@@ -28,12 +28,12 @@ export default function Footer() {
           <h3 className="text-white text-lg font-semibold mb-4">DERMACTIVE</h3>
           <ul className="space-y-3 text-sm">
             <li>
-              <Link href={"/aboutus"}>
+              <Link href={"/components/aboutus"}>
                 <span className="hover:text-white">About</span>
               </Link>
             </li>
             <li>
-              <Link href={"/contactus"}>
+              <Link href={"/components/contactus"}>
                 <span className="hover:text-white">Contact us</span>
               </Link>
             </li>
@@ -45,27 +45,27 @@ export default function Footer() {
           <h3 className="text-white text-lg font-semibold mb-4">Our Range</h3>
           <ul className="space-y-3 text-sm">
             <li>
-              <Link href={"/products/acti-clear"}>
+              <Link href={"/components/products/acti-clear"}>
                 <span className="hover:text-white">ACTI-CLEAR</span>
               </Link>
             </li>
             <li>
-              <Link href={"/products/acti-white"}>
+              <Link href={"/components/products/acti-white"}>
                 <span className="hover:text-white">ACTI-WHITE</span>
               </Link>
             </li>
             <li>
-              <Link href={"/products/acti-solaire"}>
+              <Link href={"/components/products/acti-solaire"}>
                 <span className="hover:text-white">ACTI-SOLAIRE </span>
               </Link>
             </li>
             <li>
-              <Link href={"/products/acti-repair"}>
+              <Link href={"/components/products/acti-repair"}>
                 <span className="hover:text-white">ACTI-REPAIR </span>
               </Link>
             </li>
             <li>
-              <Link href={"/products/tricho-act"}>
+              <Link href={"/components/products/tricho-act"}>
                 <span className="hover:text-white">TRICHO-ACT </span>
               </Link>
             </li>
@@ -79,33 +79,33 @@ export default function Footer() {
           </h3>
           <ul className="space-y-3 text-sm">
             <li>
-              <Link href={"/products/acti-clear"}>
+              <Link href={"/components/products/acti-clear"}>
                 <span className="hover:text-white">
                   Oily & Acne - prone skin
                 </span>
               </Link>
             </li>
             <li>
-              <Link href={"/products/acti-white"}>
+              <Link href={"/components/products/acti-white"}>
                 <span className="hover:text-white">
                   Un-Even & Pigmented Skin
                 </span>
               </Link>
             </li>
             <li>
-              <Link href={"/products/acti-solaire"}>
+              <Link href={"/components/products/acti-solaire"}>
                 <span className="hover:text-white">Sun Exposure</span>
               </Link>
             </li>
             <li>
-              <Link href={"/products/acti-repair"}>
+              <Link href={"/components/products/acti-repair"}>
                 <span className="hover:text-white">
                   Irritated & Damaged Skin
                 </span>
               </Link>
             </li>
             <li>
-              <Link href={"/products/tricho-act"}>
+              <Link href={"/components/products/tricho-act"}>
                 <span className="hover:text-white">Hair Loss</span>
               </Link>
             </li>

@@ -97,7 +97,7 @@ export default function OurRance() {
         itemClass=""
       >
         {Boxs.map((obj, i) => (
-          <Link key={i} href={`/products/${obj.colectionLink}`}>
+          <Link key={i} href={`/components/products/${obj.colectionLink}`}>
             <div className="relative w-full h-35 sm:h-60 md:h-60 group  cursor-pointer">
               <Image
                 sizes={carouselItemSizes}

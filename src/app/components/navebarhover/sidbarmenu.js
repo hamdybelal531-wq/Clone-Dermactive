@@ -5,7 +5,7 @@ import { HiX, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineSearch } from "react-icons/hi";
 import Link from "next/link";
-import { menuData } from "@/app/data/mobileproducts";
+import { menuData } from "@/app/components/data/mobileproducts";
 
 export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
   const [activeTab, setActiveTab] = useState(null);
@@ -56,7 +56,7 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
                 {tab.sections.length === 0 ? (
                   <Link href="#" onClick={() => SetShowMobileMenu(false)}>
                     {tab.title === "About Dermactive" ? (
-                      <Link href={`/aboutus`}>
+                      <Link href={`/components/aboutus`}>
                         <div
                           className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium text-black hover:text-[#777]`}
                         >
@@ -64,7 +64,7 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
                         </div>
                       </Link>
                     ) : tab.title === "Contact Us" ? (
-                      <Link href={`/contactus`}>
+                      <Link href={`/components/contactus`}>
                         <div
                           className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium text-black hover:text-[#777]`}
                         >
@@ -131,7 +131,7 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
                             >
                               {section.products.map((product) => (
                                 <Link
-                                  href={`/componts/oneproduct/${
+                                  href={`/components/oneproduct/${
                                     product.collectionKey
                                   }/${product.id.toString()}`}
                                   key={product.name}

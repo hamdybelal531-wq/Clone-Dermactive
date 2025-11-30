@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
-import { rangesDataSkin } from "@/app/data/products";
+import { rangesDataSkin } from "@/app/components/data/products";
 
 export default function HoverSkincon({ Show, SetShow }) {
   const [nameSkin, setNameSkin] = useState(rangesDataSkin[0].name);
@@ -12,7 +12,7 @@ export default function HoverSkincon({ Show, SetShow }) {
         key={range.name}
         className="hover:text-[#777] cursor-pointer relative text-[20px] whitespace-nowrap"
       >
-        <Link href={`/products/${range.products[0].collectionKey}`}>
+        <Link href={`/components/products/${range.products[0].collectionKey}`}>
           <span
             style={{
               color: nameSkin === range.name ? "#777" : "black",
@@ -42,7 +42,7 @@ export default function HoverSkincon({ Show, SetShow }) {
           {range.products.map((product, index) => (
             <Link
               key={index}
-              href={`/componts/oneproduct/${
+              href={`/components/oneproduct/${
                 product.collectionKey
               }/${product.id.toString()}`}
             >

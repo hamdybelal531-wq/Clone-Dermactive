@@ -90,7 +90,7 @@ export default function NewAravil() {
             return (
               <Link
                 key={box.id}
-                href={`/componts/oneproduct/${box.colectionLink}/${
+                href={`/components/oneproduct/${box.colectionLink}/${
                   box.id === 4 ? 1 : box.id
                 }`}
               >

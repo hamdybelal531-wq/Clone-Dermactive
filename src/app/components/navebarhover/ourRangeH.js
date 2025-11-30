@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
-import { getRangesData } from "@/app/data/products";
+import { getRangesData } from "@/app/components/data/products";
 
 const rangesData = getRangesData();
 export default function HoverOurRange({ Show, SetShow }) {
@@ -13,7 +13,7 @@ export default function HoverOurRange({ Show, SetShow }) {
         key={range.name}
         className="hover:text-[#777] cursor-pointer relative text-[20px] whitespace-nowrap"
       >
-        <Link href={`/products/${range.name.toLowerCase()}`}>
+        <Link href={`/components/products/${range.name.toLowerCase()}`}>
           <span
             style={{
               color: nameAction === range.name ? "#777" : "black",
@@ -43,7 +43,7 @@ export default function HoverOurRange({ Show, SetShow }) {
           {range.products.map((product, index) => (
             <Link
               key={index}
-              href={`/componts/oneproduct/${range.name.toLowerCase()}/${(
+              href={`/components/oneproduct/${range.name.toLowerCase()}/${(
                 index + 1
               ).toString()}`}
             >

@@ -124,7 +124,10 @@ export default function Navibar() {
               >
                 <ul className="absolute top-full -left-3">
                   {items.map((item) => (
-                    <Link href={`/${item.collectionLink}`} key={item.id}>
+                    <Link
+                      href={`/components/${item.collectionLink}`}
+                      key={item.id}
+                    >
                       <li className="p-3 bg-white text-black shadow-sm text-[14px] rounded-2xl mt-2 whitespace-nowrap hover:text-[#777]">
                         {item.text}
                       </li>

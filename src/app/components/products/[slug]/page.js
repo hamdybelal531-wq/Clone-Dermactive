@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import Products from "@/app/data/products";
+import Products from "@/app/components/data/products";
 import React from "react";
 import Link from "next/link";
 
@@ -60,7 +60,7 @@ export default function ProductsPage({ params }) {
       <div>
         <div className="text-center   m-auto  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 justify-items-center lg:w-[900px] xl:w-[1160px]">
           {Product.items.map((item) => {
-            const productLink = `/componts/oneproduct/${collectionKey}/${item.id.toString()}`;
+            const productLink = `/components/oneproduct/${collectionKey}/${item.id.toString()}`;
             return (
               <Link key={item.id} href={productLink}>
                 <div

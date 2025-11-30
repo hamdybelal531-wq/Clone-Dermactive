@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
-import { rangesData } from "@/app/data/products";
+import { rangesData } from "@/app/components/data/products";
 
 export default function HoverProduct({ Show, SetShow }) {
   const [namePrudct, setNamePrudect] = useState(rangesData[0].name);
@@ -42,7 +42,7 @@ export default function HoverProduct({ Show, SetShow }) {
           {range.products.map((product, index) => (
             <Link
               key={index}
-              href={`/componts/oneproduct/${
+              href={`/components/oneproduct/${
                 product.collectionKey
               }/${product.id.toString()}`}
             >
