@@ -32,10 +32,6 @@ const CartSidebar = () => {
 
   function updateQuantity(id, newQty) {
     if (newQty < 1) return;
-    // const Update = items.find((item) => item.id === id);
-    const Update = items.map((item) => {
-      item.id === id ? { ...item, quantity: newQty } : item;
-    });
     dispatch({
       type: "UPDATE_QUANTITY",
       payload: {
@@ -53,7 +49,7 @@ const CartSidebar = () => {
       />
 
       <div
-        className={`fixed top-0 right-0 h-full w-4/4 md:w-1/3 bg-white shadow-2xl z-50 transform transition-transform duration-500 ease-in-out ${sidebarClasses}`}
+        className={`fixed top-0 right-0 h-full w-full sm:w-[600px] bg-white shadow-2xl z-50 transform transition-transform duration-500 ease-in-out ${sidebarClasses}`}
       >
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-2xl text-[#222]">
@@ -91,25 +87,25 @@ const CartSidebar = () => {
         </div>
 
         {/* محتوى السلة */}
-        <div className="p-4 overflow-y-auto h-[calc(100%-120px)]">
+        <div className="p-5 m-auto overflow-y-auto h-[calc(100%-120px)] max-w-full">
           {items.length === 0 ? (
             <p className="text-center  text-[#777] text-2xl mt-10">Empty</p>
           ) : (
             items.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between border-b py-3"
+                className="flex flex-wrap sm:flex-nowrap items-center justify-between border-b py-3 max-w-full w-[99%]"
               >
                 <div className="flex justify-center items-center">
                   <div className="flex items-center space-x-3 relative object-cover h-20 w-20">
                     <Image src={item.img} fill alt="UNPhoto" />
                   </div>
-                  <span className="font-semibold text-[14px]">
+                  <span className="text-[14px] whitespace-pre-wrap">
                     {item.name.toUpperCase()}
                   </span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-gray-600">
+                <div className="flex items-end justify-end w-full space-x-3">
+                  <span className="text-gray-600 sm:text-[14px]">
                     {/* (${item.price} x {item.quantity}) */}$
                     {item.quantity > 1
                       ? item.price * item.quantity
@@ -136,7 +132,7 @@ const CartSidebar = () => {
 
                   {/* زرار الإزالة */}
                   <button
-                    className="text-red-500 hover:text-red-700 text-sm cursor-pointer"
+                    className="text-red-500 hover:text-red-700 sm:text-sm text-[12px]  cursor-pointer"
                     onClick={() =>
                       dispatch({
                         type: "REMOVE_ITEM",
