@@ -87,7 +87,7 @@ const CartSidebar = () => {
         </div>
 
         {/* محتوى السلة */}
-        <div className="p-5 m-auto overflow-y-auto h-[calc(100%-120px)] max-w-full">
+        <div className="p-5 m-auto overflow-y-auto h-[calc(100%-175px)] max-w-full">
           {items.length === 0 ? (
             <p className="text-center  text-[#777] text-2xl mt-10">Empty</p>
           ) : (
