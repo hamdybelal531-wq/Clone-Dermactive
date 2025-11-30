@@ -15,6 +15,7 @@ const Toaster = ({ ...props }) => {
 
   return (
     <Sonner
+      duration={1500}
       theme={theme}
       className="toaster group"
       icons={{

@@ -368,7 +368,7 @@ export default function OneProduct({ params }) {
                         sizes={newArrivalItemSizes}
                         src={item.img}
                         fill
-                        alt={"NAN"}
+                        alt={item.name}
                         className="object-contain lg:object-cover transition-all duration-500 "
                       />
                     </div>

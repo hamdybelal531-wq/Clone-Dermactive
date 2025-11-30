@@ -10,16 +10,18 @@ const ToggleCartButton = () => {
 
   return (
     <button
-      className="fixed bottom-5 cursor-pointer left-5  text-white  rounded-full animate-shake-loop  transition duration-200 z-40"
+      className={`fixed bottom-5 cursor-pointer left-5  text-white  rounded-full ${
+        cartItemCount > 0 ? "animate-shake-loop" : ""
+      }   transition duration-200 z-40`}
       onClick={() => dispatch({ type: "TOGGLE_CART" })}
     >
-      <div className="relative h-15 w-15">
+      <div className="relative sm:h-15 sm:w-15 h-12 w-12">
         <Image
           src="/icons8-basket-48.png"
           alt="Basket"
           fill
           className="object-contain"
-          sizes="20vw"
+          sizes="10vw"
         />
       </div>
       {/* ({cartItemCount}) */}

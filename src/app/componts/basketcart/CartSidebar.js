@@ -100,7 +100,7 @@ const CartSidebar = () => {
                   <div className="flex items-center space-x-3 relative object-cover h-20 w-20">
                     <Image src={item.img} fill alt="UNPhoto" />
                   </div>
-                  <span className="text-[14px] whitespace-pre-wrap">
+                  <span className="text-[14px] sm:text-[17px] w-full sm:whitespace-nowrap">
                     {item.name.toUpperCase()}
                   </span>
                 </div>
