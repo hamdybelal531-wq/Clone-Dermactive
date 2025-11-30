@@ -2,8 +2,6 @@ import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import { rangesData } from "@/app/data/products";
-// بيانات المجموعات (Ranges Data)
-//
 
 export default function HoverProduct({ Show, SetShow }) {
   const [namePrudct, setNamePrudect] = useState(rangesData[0].name);
@@ -23,7 +21,6 @@ export default function HoverProduct({ Show, SetShow }) {
         >
           {range.name}
         </span>
-        {/* القائمة الفرعية والصورة */}
         <ul
           className="p-10 flex-col gap-5 absolute top-full min-w-[700px] text-[#777]"
           style={{
@@ -43,7 +40,6 @@ export default function HoverProduct({ Show, SetShow }) {
           }}
         >
           {range.products.map((product, index) => (
-            // استخدام Link هنا لربط المنتج بصفحته
             <Link
               key={index}
               href={`/componts/oneproduct/${
@@ -55,7 +51,6 @@ export default function HoverProduct({ Show, SetShow }) {
               </li>
             </Link>
           ))}
-          {/* الصورة */}
           <div className="p-20 absolute lg:w-[400px] xl:w-[700px] h-[450px] top-0 lg:-right-[250px] xl:-right-[600px]">
             <Image
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

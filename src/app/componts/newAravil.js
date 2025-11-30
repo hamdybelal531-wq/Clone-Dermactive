@@ -79,7 +79,6 @@ export default function NewAravil() {
           New Arrival
         </h1>
         <Carousel
-          // showDots={true}
           swipeable={true}
           draggable={true}
           minimumTouchDrag={5}

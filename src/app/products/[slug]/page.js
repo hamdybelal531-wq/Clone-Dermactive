@@ -23,7 +23,7 @@ export default function ProductsPage({ params }) {
     return (
       <div className="flex items-center justify-center min-h-screen text-center bg-gray-50">
         <h1 className="text-3xl text-red-500 p-20 rounded-lg shadow-lg">
-          ⚠️ لم يتم العثور على المجموعة المطلوبة
+          Not Found Any Items
         </h1>
       </div>
     );

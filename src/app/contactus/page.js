@@ -23,6 +23,12 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     toast.success("Event has been created.");
+    setFormData({
+      fullName: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
@@ -40,7 +46,7 @@ const ContactForm = () => {
               required
             />
 
-            {/* حقل الهاتف */}
+            {/* phone*/}
             <input
               type="tel"
               name="phone"
@@ -51,7 +57,7 @@ const ContactForm = () => {
               required
             />
 
-            {/* حقل البريد الإلكتروني */}
+            {/* email*/}
             <input
               type="email"
               name="email"
@@ -62,7 +68,7 @@ const ContactForm = () => {
               required
             />
 
-            {/* حقل الرسال الكتابة */}
+            {/* text */}
             <textarea
               name="message"
               placeholder="Write Us"
@@ -73,7 +79,7 @@ const ContactForm = () => {
               required
             />
 
-            {/* زر الإرسال */}
+            {/*  */}
             <button
               type="submit"
               className="w-auto px-6 py-3 flex items-center justify-center bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-800 transition duration-300 shadow-md"
@@ -101,23 +107,19 @@ const ContactForm = () => {
             within 24 hours and as soon as possible
           </p>
 
-          {/* أيقونات التواصل الاجتماعي */}
           <div className="flex space-x-4">
-            {/* Facebook */}
             <a
               href="#"
               className="text-gray-700 hover:text-blue-600 transition duration-300"
             >
               <FaFacebookF size={20} />
             </a>
-            {/* Instagram */}
             <a
               href="#"
               className="text-gray-700 hover:text-pink-600 transition duration-300"
             >
               <FaInstagram size={20} />
             </a>
-            {/* TikTok */}
             <a
               href="#"
               className="text-gray-700 hover:text-black transition duration-300"

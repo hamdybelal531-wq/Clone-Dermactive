@@ -31,29 +31,21 @@ export default function OurRance() {
       breakpoint: { max: 4000, min: 1400 },
       items: 4,
       slidesToSlide: 4,
-      // customTransition: `transform 1.2s ${SMOOTH_EASING}`,
-      // transitionDuration: 1200,
     },
     desktop: {
       breakpoint: { max: 1400, min: 1024 },
       items: 4,
       slidesToSlide: 4,
-      // customTransition: `transform 0.8s ${SMOOTH_EASING}`,
-      // transitionDuration: 800,
     },
     tablet: {
       breakpoint: { max: 1024, min: 768 },
       items: 3,
       slidesToSlide: 3,
-      // customTransition: `transform 0.5s ${SMOOTH_EASING}`,
-      // transitionDuration: 500,
     },
     mobile: {
       breakpoint: { max: 768, min: 0 },
       items: 2,
       slidesToSlide: 2,
-      // customTransition: `transform 0.5s ${SMOOTH_EASING}`,
-      // transitionDuration: 500,
     },
   };
   const Boxs = [

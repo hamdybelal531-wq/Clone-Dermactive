@@ -53,7 +53,6 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
           <div className="p-4">
             {menuData.map((tab) => (
               <div key={tab.title} className="mb-2 border-b border-gray-100">
-                {/* [!!!] رابط لـ About Dermactive إذا لم يكن به أقسام فرعية */}
                 {tab.sections.length === 0 ? (
                   <Link href="#" onClick={() => SetShowMobileMenu(false)}>
                     {tab.title === "About Dermactive" ? (
@@ -81,7 +80,6 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
                     )}
                   </Link>
                 ) : (
-                  // القائمة الرئيسية القابلة للفتح (Accordion Header)
                   <div
                     className={`flex justify-between items-center py-3 cursor-pointer text-[16px] font-medium ${
                       activeTab === tab.title ? "text-[#222]" : "text-black"
@@ -124,7 +122,6 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
                             </span>
                           </div>
 
-                          {/* Products List (باستخدام Link والبيانات المصححة) */}
                           {activeSection === section.name && (
                             <motion.ul
                               initial={{ opacity: 0, height: 0 }}
@@ -134,14 +131,11 @@ export default function MobileMenu({ ShowMobileMenu, SetShowMobileMenu }) {
                             >
                               {section.products.map((product) => (
                                 <Link
-                                  // نستخدم المسار كما حددته في ملف HoverProduct.jsx:
-                                  // /componts/oneproduct/[collectionKey]/[id]
                                   href={`/componts/oneproduct/${
                                     product.collectionKey
                                   }/${product.id.toString()}`}
-                                  // نستخدم اسم المنتج كمفتاح
                                   key={product.name}
-                                  onClick={() => SetShowMobileMenu(false)} // إغلاق القائمة عند النقر
+                                  onClick={() => SetShowMobileMenu(false)}
                                 >
                                   <li className="py-1 hover:text-black cursor-pointer">
                                     {product.name}

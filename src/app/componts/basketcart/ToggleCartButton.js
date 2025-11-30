@@ -42,7 +42,6 @@ const ToggleCartButton = () => {
           sizes="10vw"
         />
       </div>
-      {/* ({cartItemCount}) */}
       <AnimatePresence>
         {cartItemCount > 0 && (
           <motion.div

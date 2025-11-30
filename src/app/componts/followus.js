@@ -34,7 +34,7 @@ export default function NewsletterSection() {
         {/* Right Image */}
         <div className="w-full h-full flex justify-center md:justify-start">
           <Image
-            src="https://derm-active.com/wp-content/uploads/2023/02/Newsletter.jpg" // ضع صورتك هنا
+            src="https://derm-active.com/wp-content/uploads/2023/02/Newsletter.jpg"
             width={500}
             height={300}
             alt="newsletter"

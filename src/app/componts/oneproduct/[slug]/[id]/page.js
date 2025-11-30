@@ -84,11 +84,9 @@ export default function OneProduct({ params }) {
   const handleThumbnailClick = (index) => {
     setActiveIndex(index);
     if (carouselRef.current) {
-      // استخدام خاصية goToSlide للانتقال إلى الشريحة المطلوبة
       carouselRef.current.goToSlide(index);
     }
   };
-  // Complete Your Rotine
 
   const SMOOTH_EASING = "cubic-bezier(0.25, 0.1, 0.25, 1)";
   // Complete Your Rotine
@@ -221,9 +219,6 @@ export default function OneProduct({ params }) {
       </div>
     );
   };
-  //   groupItems
-  // product
-  // otherItems
   return (
     <>
       <div className="pt-15 w-full h-full flex-col  flex sm:px-20  gap-5 md:flex-row md:px-20 xl:px-60 mx-auto">
@@ -255,8 +250,8 @@ export default function OneProduct({ params }) {
                   <div
                     className={`absolute inset-0 z-10 transition-all duration-300  ${
                       activeIndex === 0
-                        ? "bg-black/10" // التحديد النشط
-                        : "border-2 border-transparent hover:border-gray-400/50" // التحديد غير النشط
+                        ? "bg-black/10"
+                        : "border-2 border-transparent hover:border-gray-400/50"
                     }`}
                   ></div>
                   <Image
@@ -274,8 +269,8 @@ export default function OneProduct({ params }) {
                   <div
                     className={`absolute inset-0 z-10 transition-all duration-300  ${
                       activeIndex === 1
-                        ? "bg-black/10" // التحديد النشط
-                        : "border-2 border-transparent hover:border-gray-400/50" // التحديد غير النشط
+                        ? "bg-black/10"
+                        : "border-2 border-transparent hover:border-gray-400/50"
                     }`}
                   ></div>
                   <Image
@@ -317,7 +312,7 @@ export default function OneProduct({ params }) {
                 toast.error("It is Already Added", {
                   style: {
                     background: "#f87171",
-                    fontWeight: "bold", // اللون الأحمر Tailwind red-400
+                    fontWeight: "bold",
                   },
                 });
               }

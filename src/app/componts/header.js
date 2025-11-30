@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import {
   Carousel,

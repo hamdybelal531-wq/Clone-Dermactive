@@ -8,24 +8,15 @@ const CartSidebar = () => {
   const { state, dispatch } = useCart();
   const { isCartOpen, items } = state;
 
-  // لحساب إجمالي السلة
-  const cartTotalInCents = items.reduce(
-    (totalCents, item) => {
-      // نحول سعر المنتج إلى سنتات ونضربه في الكمية
-      const priceInCents = Math.round(item.price * 100);
-      return totalCents + priceInCents * item.quantity;
-    },
-    0 // القيمة الأولية هي صفر سنت
-  );
+  const cartTotalInCents = items.reduce((totalCents, item) => {
+    const priceInCents = Math.round(item.price * 100);
+    return totalCents + priceInCents * item.quantity;
+  }, 0);
 
-  // الناتج النهائي للعرض
   const cartTotal = cartTotalInCents / 100;
 
-  // الكلاسات للتحكم في ظهور السايدبار (انزلاق من اليمين)
-  // `translate-x-0` لإظهاره، و `translate-x-full` لإخفائه
   const sidebarClasses = isCartOpen ? "translate-x-0" : "translate-x-full";
 
-  // الكلاس للـ Backdrop (الخلفية المعتمة)
   const backdropClasses = isCartOpen
     ? "opacity-100 pointer-events-auto"
     : "opacity-0 pointer-events-none";
@@ -68,7 +59,6 @@ const CartSidebar = () => {
             className="text-gray-500 hover:text-gray-700"
             onClick={() => dispatch({ type: "TOGGLE_CART" })}
           >
-            {/* أيقونة الإغلاق (X) */}
             <svg
               className="w-6 h-6 cursor-pointer"
               fill="none"
@@ -86,7 +76,6 @@ const CartSidebar = () => {
           </button>
         </div>
 
-        {/* محتوى السلة */}
         <div className="p-5 m-auto overflow-y-auto h-[calc(100%-175px)] max-w-full">
           {items.length === 0 ? (
             <p className="text-center  text-[#777] text-2xl mt-10">Empty</p>
@@ -96,22 +85,21 @@ const CartSidebar = () => {
                 key={item.id}
                 className="flex flex-wrap sm:flex-nowrap items-center justify-between border-b py-3 max-w-full w-[99%]"
               >
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center flex-2">
                   <div className="flex items-center  relative object-cover h-25 w-30">
                     <Image src={item.img} fill alt="UNPhoto" sizes="20vw" />
                   </div>
-                  <span className="text-[14px] sm:text-[17px] w-full sm:whitespace-nowrap">
+                  <span className="text-[14px] sm:text-[17px] w-full ">
                     {item.name.toUpperCase()}
                   </span>
                 </div>
-                <div className="flex items-end justify-end w-full space-x-3">
+                <div className="flex items-end justify-end w-full space-x-3 flex-1">
                   <span className="text-gray-600 sm:text-[14px]">
-                    {/* (${item.price} x {item.quantity}) */}$
+                    $
                     {item.quantity > 1
                       ? item.price * item.quantity
                       : item.price}
                   </span>
-                  {/* add More */}
                   <div className="flex items-center ">
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -130,7 +118,6 @@ const CartSidebar = () => {
                     </button>
                   </div>
 
-                  {/* زرار الإزالة */}
                   <button
                     className="text-red-500 hover:text-red-700 sm:text-sm text-[12px]  cursor-pointer"
                     onClick={() =>
@@ -148,7 +135,6 @@ const CartSidebar = () => {
           )}
         </div>
 
-        {/* أسفل السلة (الإجمالي وزرار الدفع) */}
         <div className="absolute bottom-0 w-full p-4 border-t bg-white">
           <div className="flex justify-between font-bold text-xl mb-3">
             <span>Total</span>

@@ -78,7 +78,7 @@ export const menuData = [
           {
             name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
             collectionKey: "acti-solaire",
-            id: 1, // تصحيح: تم تبديل هذا المنتج مع SPF 50+ Ultra Fluid Light Tinted في السابق
+            id: 1,
           },
           {
             name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
@@ -95,7 +95,6 @@ export const menuData = [
       {
         name: "Acti Repair",
         products: [
-          // تصحيح الأرقام التعريفية (ID) لتطابق ملف Products.js
           {
             name: "ACTI-REPAIR CICA Cream",
             collectionKey: "acti-repair",
@@ -241,7 +240,6 @@ export const menuData = [
       {
         name: "Irritated & Damaged Skin",
         products: [
-          // تصحيح الأرقام التعريفية (ID) لتطابق ملف Products.js
           {
             name: "ACTI-REPAIR CICA Cream",
             collectionKey: "acti-repair",

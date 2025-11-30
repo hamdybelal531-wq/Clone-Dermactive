@@ -24,7 +24,6 @@ export default function HoverOurRange({ Show, SetShow }) {
             {range.name}
           </span>
         </Link>
-        {/* القائمة الفرعية والصورة */}
         <ul
           className="p-10 flex-col gap-5 absolute top-full min-w-[700px] text-[#777]"
           style={{
@@ -51,7 +50,6 @@ export default function HoverOurRange({ Show, SetShow }) {
               <li>{product}</li>
             </Link>
           ))}
-          {/*  الصورة */}
           <div className="p-10 absolute lg:w-[400px] xl:w-[700px] h-[400px] top-0 lg:-right-[250px] xl:-right-[600px]">
             <Image
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

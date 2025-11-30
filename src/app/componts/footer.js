@@ -37,11 +37,6 @@ export default function Footer() {
                 <span className="hover:text-white">Contact us</span>
               </Link>
             </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                Our Blogs
-              </a>
-            </li>
           </ul>
         </div>
 

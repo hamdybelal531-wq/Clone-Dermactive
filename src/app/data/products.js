@@ -376,7 +376,7 @@ export const rangesData = [
         name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
         collectionKey: "acti-solaire",
         id: 1,
-      }, // تم الربط بالـ ID 1
+      },
       {
         name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
         collectionKey: "acti-solaire",
@@ -447,22 +447,22 @@ export const rangesDataSkin = [
       {
         name: "ACTI-CLEAR Gentle Cleansing Gel",
         collectionKey: "acti-clear",
-        id: 1, // صحيح
+        id: 1,
       },
       {
         name: "ACTI-CLEAR Hydra-Mattifying Gel",
         collectionKey: "acti-clear",
-        id: 2, // صحيح
+        id: 2,
       },
       {
         name: "ACTI-CLEAR Correcting Serum",
         collectionKey: "acti-clear",
-        id: 3, // صحيح
+        id: 3,
       },
       {
         name: "ACTI-CLEAR Global AC Cream",
         collectionKey: "acti-clear",
-        id: 4, // صحيح
+        id: 4,
       },
     ],
     imageSrc:
@@ -475,15 +475,14 @@ export const rangesDataSkin = [
       {
         name: "ACTI-WHITE Brightening Correcting Serum",
         collectionKey: "acti-white",
-        id: 2, // صحيح
+        id: 2,
       },
       {
         name: "ACTI-WHITE Depigmenting Cream",
         collectionKey: "acti-white",
-        id: 3, // صحيح
+        id: 3,
       },
-      { name: "ACTI-WHITE Eye Contour", collectionKey: "acti-white", id: 4 }, // صحيح
-      // ⚠️ ملاحظة: منتج "ACTI-WHITE 2in1 Body Milk" غير موجود في كائن Products الأصلي.
+      { name: "ACTI-WHITE Eye Contour", collectionKey: "acti-white", id: 4 },
       { name: "ACTI-WHITE 2in1 Body Milk", collectionKey: "acti-white", id: 5 },
     ],
     imageSrc:
@@ -495,32 +494,32 @@ export const rangesDataSkin = [
       {
         name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid",
         collectionKey: "acti-solaire",
-        id: 4, // صحيح
+        id: 4,
       },
       {
         name: "ACTI-SOLAIRE SPF 50+ Ultra Fluid Light Tinted",
         collectionKey: "acti-solaire",
-        id: 5, // صحيح
+        id: 5,
       },
       {
         name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM",
         collectionKey: "acti-solaire",
-        id: 3, // صحيح
+        id: 3,
       },
       {
         name: "ACTI-SOLAIRE SPF 50+ MELTING CREAM Light Tinted",
         collectionKey: "acti-solaire",
-        id: 1, // صحيح (يطابق SPF 50 MELTING CREAM Light Tinted)
+        id: 1,
       },
       {
         name: "ACTI-SOLAIRE SPF 50+ LAIT SPRAY",
         collectionKey: "acti-solaire",
-        id: 2, // صحيح
+        id: 2,
       },
       {
         name: "ACTI-SOLAIRE SPF50+ KIDS",
         collectionKey: "acti-solaire",
-        id: 6, // صحيح
+        id: 6,
       },
     ],
     imageSrc:
@@ -529,7 +528,6 @@ export const rangesDataSkin = [
   {
     name: "Irritated & Damaged Skin",
     products: [
-      // ⚠️ تم تعديل الـ IDs هنا لتطابق كائن Products: Soothing Cleansing Gel هو ID 1، و CICA Cream هو ID 2.
       {
         name: "ACTI-REPAIR CICA Cream",
         collectionKey: "acti-repair",
@@ -544,7 +542,7 @@ export const rangesDataSkin = [
       {
         name: "ACTI-REPAIR Emollient Extreme",
         collectionKey: "acti-repair",
-        id: 3, // تم تصحيح: كان 4، أصبح 3
+        id: 3,
       },
     ],
     imageSrc:
@@ -556,22 +554,22 @@ export const rangesDataSkin = [
       {
         name: "TRICHO-ACT Anti-Hair loss Shampoo",
         collectionKey: "tricho-act",
-        id: 1, // صحيح
+        id: 1,
       },
       {
         name: "TRICHO-ACT Anti-Dandruff Shampoo DS",
         collectionKey: "tricho-act",
-        id: 2, // صحيح
+        id: 2,
       },
       {
         name: "TRICHO-ACT Hair Repairing Mask",
         collectionKey: "tricho-act",
-        id: 3, // صحيح
+        id: 3,
       },
       {
         name: "TRICHO-ACT Anti-Hair Loss Lotion Concentrate",
         collectionKey: "tricho-act",
-        id: 4, // صحيح
+        id: 4,
       },
     ],
     imageSrc:
