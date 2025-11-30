@@ -97,8 +97,8 @@ const CartSidebar = () => {
                 className="flex flex-wrap sm:flex-nowrap items-center justify-between border-b py-3 max-w-full w-[99%]"
               >
                 <div className="flex justify-center items-center">
-                  <div className="flex items-center space-x-3 relative object-cover h-20 w-20">
-                    <Image src={item.img} fill alt="UNPhoto" />
+                  <div className="flex items-center  relative object-cover h-25 w-30">
+                    <Image src={item.img} fill alt="UNPhoto" sizes="20vw" />
                   </div>
                   <span className="text-[14px] sm:text-[17px] w-full sm:whitespace-nowrap">
                     {item.name.toUpperCase()}

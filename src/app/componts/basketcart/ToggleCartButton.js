@@ -3,15 +3,33 @@ import React from "react";
 import { useCart } from "./CartContext";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
 const ToggleCartButton = () => {
   const { state, dispatch } = useCart();
   const cartItemCount = Number(state.items.length);
 
+  const [isShaking, setIsShaking] = useState(false);
+  const prevCountRef = useRef(0);
+  useEffect(() => {
+    const prev = prevCountRef.current;
+
+    if (cartItemCount > prev) {
+      setIsShaking(true);
+
+      const timer = setTimeout(() => {
+        setIsShaking(false);
+      }, 1200);
+
+      return () => clearTimeout(timer);
+    }
+
+    prevCountRef.current = cartItemCount;
+  }, [cartItemCount]);
   return (
     <button
       className={`fixed bottom-5 cursor-pointer left-5  text-white  rounded-full ${
-        cartItemCount > 0 ? "animate-shake-loop" : ""
+        isShaking ? "animate-shake-loop" : ""
       }   transition duration-200 z-40`}
       onClick={() => dispatch({ type: "TOGGLE_CART" })}
     >
