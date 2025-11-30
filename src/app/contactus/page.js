@@ -127,7 +127,7 @@ const ContactForm = () => {
             {/*  */}
             <button
               type="submit"
-              className="w-auto px-6 py-3 flex items-center justify-center bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-800 transition duration-300 shadow-md"
+              className="w-auto cursor-pointer px-6 py-3 flex items-center justify-center bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-800 transition duration-300 shadow-md"
             >
               <IoSend className="mr-2 transform rotate-45" />
               SEND

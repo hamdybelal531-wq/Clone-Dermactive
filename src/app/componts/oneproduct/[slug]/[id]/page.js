@@ -184,10 +184,12 @@ export default function OneProduct({ params }) {
         className="w-full border-b border-gray-200 last:border-b-0"
       >
         <div
-          className="flex lg:cursor-default justify-between lg:justify-center items-center p-4 cursor-pointer bg-white hover:bg-gray-50 transition-colors"
+          className="flex  lg:cursor-default justify-between lg:justify-center items-center p-4 cursor-pointer bg-white hover:bg-gray-50 transition-colors"
           onClick={() => toggleAccordion(sectionKey)}
         >
-          <h3 className="text-base font-bold text-gray-800">{title}</h3>
+          <h3 className="text-base font-bold text-gray-800 cursor-pointer">
+            {title}
+          </h3>
 
           <svg
             className={`w-3 h-3 text-gray-600 transition-transform duration-300 ${arrowDirection}`}
@@ -244,7 +246,7 @@ export default function OneProduct({ params }) {
             {product.imgHover ? (
               <>
                 <div
-                  className="relative w-1/2 mr-3"
+                  className="relative w-1/2 mr-3 cursor-pointer"
                   onClick={() => handleThumbnailClick(0)}
                 >
                   <div
@@ -263,7 +265,7 @@ export default function OneProduct({ params }) {
                   />
                 </div>
                 <div
-                  className="relative w-1/2"
+                  className="relative w-1/2 cursor-pointer"
                   onClick={() => handleThumbnailClick(1)}
                 >
                   <div

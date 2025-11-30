@@ -155,7 +155,7 @@
 }
 
 .react-multi-carousel-arrow {
-  z-index: 10 !important; /* خفضه من 50 */
+  z-index: 10 !important;
 }
 
 .react-multi-carousel-list .react-multiple-carousel__arrow {
@@ -189,8 +189,26 @@
   }
 }
 
-/* الكلاس الذي سنطبقه على الزر */
 .animate-shake-loop {
   animation: basketShake 1.2s ease-in-out infinite;
-  transform-origin: center center; /* لضمان الدوران حول المركز */
+  transform-origin: center center;
+}
+
+/* Ensure pointer cursor for interactive/clickable elements */
+a,
+button,
+input[type="button"],
+input[type="submit"],
+label,
+[role="button"],
+[onclick],
+[tabindex]:not([tabindex="-1"]),
+.clickable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Helper class for React/JSX: apply `className="clickable"` when needed */
+.clickable {
+  cursor: pointer;
 }
