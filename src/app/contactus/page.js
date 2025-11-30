@@ -19,9 +19,54 @@ const ContactForm = () => {
       [name]: value,
     }));
   };
+  const validateForm = () => {
+    const { fullName, phone, email, message } = formData;
 
+    if (fullName.trim().length < 3) {
+      toast.error("Error! Cheack Your Info in Name", {
+        style: {
+          background: "#f87171",
+          fontWeight: "bold",
+        },
+      });
+      return false;
+    }
+
+    if (!/^[0-9]{11}$/.test(phone)) {
+      toast.error("Error! Cheack Your Info in Phone", {
+        style: {
+          background: "#f87171",
+          fontWeight: "bold",
+        },
+      });
+      return false;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.error("Error! Cheack Your Info in Email", {
+        style: {
+          background: "#f87171",
+          fontWeight: "bold",
+        },
+      });
+      return false;
+    }
+
+    if (message.trim().length < 10) {
+      toast.error("Error! Message Under 10 Letter! ", {
+        style: {
+          background: "#f87171",
+          fontWeight: "bold",
+        },
+      });
+      return false;
+    }
+
+    return true;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
     toast.success("Event has been created.");
     setFormData({
       fullName: "",
