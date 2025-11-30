@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
 import { toast } from "sonner";
+import axios from "axios";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -64,16 +65,44 @@ const ContactForm = () => {
 
     return true;
   };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-    toast.success("Event has been created.");
-    setFormData({
-      fullName: "",
-      phone: "",
-      email: "",
-      message: "",
-    });
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/contacts",
+        formData
+      );
+
+      if (response.status === 201) {
+        toast.success("Your message has been sent successfully ", {
+          style: {
+            background: "#4ade80",
+            fontWeight: "bold",
+          },
+        });
+
+        console.log("Successfully added contact:", response.data);
+
+        setFormData({
+          fullName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      const errorMessage = error.response?.data || error.message;
+      toast.error(`Submission failed: ${errorMessage}`, {
+        style: {
+          background: "#f87171",
+          fontWeight: "bold",
+        },
+      });
+      console.error(" Submission Error:", error);
+    }
   };
 
   return (

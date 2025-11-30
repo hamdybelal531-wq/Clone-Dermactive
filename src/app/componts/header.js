@@ -72,8 +72,8 @@ export default function Header() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-20" />
-          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-20" />
+          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer" />
+          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer" />
         </Carousel>
       </div>
     </>
