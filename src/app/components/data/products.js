@@ -296,15 +296,15 @@ const Products = {
     items: [
       {
         id: 1,
-        name: "control intense",
-        img: "https://derm-active.com/wp-content/uploads/2024/08/INTENSE-711x1024.png",
+        name: "Control Triple Effect",
+        img: "https://derm-active.com/wp-content/uploads/2024/08/TRIPPLE-EFFECT.png",
         imgHover: "",
-        prag: "Dermactive Sweat Control INTENSE Anti-Perspirant Deodorant Roll-On is an antiperspirant that protects against sweating up to 48h , helps control excess underarm odor thanks to its intense formula that regulates perspiration, helps reduce the bacteria responsible for odors",
+        prag: "Dermactive Sweat Control TRIPLE EFFECT Deodorant Roll-On offers complete Care for underarm area. It regulates perspiration up to 48 h, helps reduce the bacteria responsible for odors. Helps prevent bad body odors.",
         size: "50 ML",
       },
       {
         id: 2,
-        name: "control refreshing",
+        name: "Control Refreshing",
         img: "https://derm-active.com/wp-content/uploads/2024/08/REFRESHING-711x1024.png",
         imgHover: "",
         prag: "Dermactive Sweat Control REFRESHING Deodorant Roll-On refreshes and protects the underarm area for up to 48 h, helps regulate normal to excessive perspiration",
@@ -312,10 +312,10 @@ const Products = {
       },
       {
         id: 3,
-        name: "control triple effect",
-        img: "https://derm-active.com/wp-content/uploads/2024/08/TRIPPLE-EFFECT.png",
+        name: "Control Intense",
+        img: "https://derm-active.com/wp-content/uploads/2024/08/INTENSE-711x1024.png",
         imgHover: "",
-        prag: "Dermactive Sweat Control TRIPLE EFFECT Deodorant Roll-On offers complete Care for underarm area. It regulates perspiration up to 48 h, helps reduce the bacteria responsible for odors. Helps prevent bad body odors.",
+        prag: "Dermactive Sweat Control INTENSE Anti-Perspirant Deodorant Roll-On is an antiperspirant that protects against sweating up to 48h , helps control excess underarm odor thanks to its intense formula that regulates perspiration, helps reduce the bacteria responsible for odors",
         size: "50 ML",
       },
     ],

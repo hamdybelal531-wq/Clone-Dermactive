@@ -106,6 +106,7 @@ export default function OneProduct({ params }) {
       title: "Ingredients",
       content: (
         <ul className="list-disc p-5 space-y-1 text-sm text-gray-700">
+          {/*  Add Data Fake For Now */}
           <li>Aqua</li>
           <li>Diethylamino Hydroxybenzoyl Hexyl Benzoate</li>
           <li>Ethylhexyl Salicylate</li>
